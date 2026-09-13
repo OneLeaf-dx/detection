@@ -62,19 +62,36 @@ def read_temps() -> dict:
     # 只取後者；找不到標頭時退而求其次取最後一段，並標記出來
     m = re.search(r"Current temperatures from HAL:(.*?)(?:\n\S|\Z)", out, re.S)
     block = m.group(1) if m else out
-    for val, name in re.findall(r"mValue=(-?[\d.]+), mType=\d+, mName=(\w+)", block):
+    for val, name in re.findall(r"Temperature\{mValue=(-?[\d.]+), mType=\d+, mName=(\w+)", block):
         cur.setdefault(name, float(val))           # 同名感測器取第一個
+    source = "current_from_hal" if m else "unlabeled"
+    # Snapdragon 662（OPPO）的 HAL 一個溫度都不回報，但 /sys/class/thermal 以 shell 可讀
+    # （天璣 8300 平板讀不到，所以只在 HAL 為空時才退回這裡）。單位是 m°C。
+    if not cur:
+        zones = RB.adb("shell", "for z in /sys/class/thermal/thermal_zone*; "
+                       "do echo $(cat $z/type) $(cat $z/temp); done").stdout
+        for name, val in re.findall(r"^(\S+) (-?\d+)\s*$", zones, re.M):
+            cur.setdefault(name, int(val) / 1000)
+        if cur:
+            source = "sysfs"
     # 各廠命名不同：天璣 8300 平板是單一的 CPU／SOC／SKIN，
-    # Snapdragon 8 Gen 2（ASUS）是 CPU0…CPU7 與小寫 skin、沒有 SOC。
-    # CPU 取所有 CPU* 的最高值，其餘不分大小寫比對。
-    cpus = [v for n, v in cur.items() if re.fullmatch(r"cpu\d*", n, re.I)]
+    # Snapdragon 8 Gen 2（ASUS）是 CPU0…CPU7 與小寫 skin、沒有 SOC，
+    # Snapdragon 662（sysfs）是 cpu-1-0…、cpuss-0… 與機殼 shell_front／shell_frame／shell_back。
+    # CPU 與表面都取同類感測器的最高值，其餘不分大小寫比對。
+    cpus = [v for n, v in cur.items() if re.fullmatch(r"cpu\d*|cpu-\d+-\d+|cpuss-\d+", n, re.I)]
+    skins = [v for n, v in cur.items() if n.lower() == "skin" or n.lower().startswith("shell_")]
     pick = lambda key: next((v for n, v in cur.items() if n.lower() == key), None)  # noqa: E731
+    # CPU 降頻冷卻裝置的目前檔位（0 = 未降頻），三台的 HAL 都有這一段
+    cooling = {n: int(v) for v, n in
+               re.findall(r"CoolingDevice\{mValue=(\d+), mType=\d+, mName=(cpufreq-cpu\d+)\}", out)}
     bat = re.search(r"temperature:\s*(\d+)", RB.adb("shell", "dumpsys", "battery").stdout)
     return {
         "thermal_status": int(status.group(1)) if status else None,
-        "source": "current_from_hal" if m else "unlabeled",
-        "cpu_c": max(cpus) if cpus else None, "soc_c": pick("soc"), "skin_c": pick("skin"),
+        "source": source,
+        "cpu_c": max(cpus) if cpus else None, "soc_c": pick("soc"),
+        "skin_c": max(skins) if skins else None,
         "battery_c": int(bat.group(1)) / 10 if bat else None,
+        "cpu_cooling": cooling,
     }
 
 
