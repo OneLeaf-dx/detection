@@ -62,13 +62,18 @@ def read_temps() -> dict:
     # 只取後者；找不到標頭時退而求其次取最後一段，並標記出來
     m = re.search(r"Current temperatures from HAL:(.*?)(?:\n\S|\Z)", out, re.S)
     block = m.group(1) if m else out
-    for val, name in re.findall(r"mValue=([\d.]+), mType=\d+, mName=(\w+)", block):
+    for val, name in re.findall(r"mValue=(-?[\d.]+), mType=\d+, mName=(\w+)", block):
         cur.setdefault(name, float(val))           # 同名感測器取第一個
+    # 各廠命名不同：天璣 8300 平板是單一的 CPU／SOC／SKIN，
+    # Snapdragon 8 Gen 2（ASUS）是 CPU0…CPU7 與小寫 skin、沒有 SOC。
+    # CPU 取所有 CPU* 的最高值，其餘不分大小寫比對。
+    cpus = [v for n, v in cur.items() if re.fullmatch(r"cpu\d*", n, re.I)]
+    pick = lambda key: next((v for n, v in cur.items() if n.lower() == key), None)  # noqa: E731
     bat = re.search(r"temperature:\s*(\d+)", RB.adb("shell", "dumpsys", "battery").stdout)
     return {
         "thermal_status": int(status.group(1)) if status else None,
         "source": "current_from_hal" if m else "unlabeled",
-        "cpu_c": cur.get("CPU"), "soc_c": cur.get("SOC"), "skin_c": cur.get("SKIN"),
+        "cpu_c": max(cpus) if cpus else None, "soc_c": pick("soc"), "skin_c": pick("skin"),
         "battery_c": int(bat.group(1)) / 10 if bat else None,
     }
 
