@@ -1,0 +1,794 @@
+======================================================================
+last__fp32__i320__e2e0.tflite @ gpu
+======================================================================
+--------- beginning of main
+09-13 19:18:47.679 17670 17670 I tflite  : Log parameter values verbosely: [0]
+09-13 19:18:47.679 17670 17670 I tflite  : Min num runs: [25]
+09-13 19:18:47.679 17670 17670 I tflite  : Num threads: [4]
+09-13 19:18:47.679 17670 17670 I tflite  : Graph: [/data/local/tmp/last__fp32__i320__e2e0.tflite]
+09-13 19:18:47.679 17670 17670 I tflite  : Signature to run: []
+09-13 19:18:47.679 17670 17670 I tflite  : #threads used for CPU inference: [4]
+09-13 19:18:47.679 17670 17670 I tflite  : Use gpu: [1]
+09-13 19:18:47.679 17670 17670 I tflite  : Use NNAPI: [0]
+09-13 19:18:47.679 17670 17670 I tflite  : Loaded model /data/local/tmp/last__fp32__i320__e2e0.tflite
+09-13 19:18:47.679 17670 17670 I tflite  : Initialized TensorFlow Lite runtime.
+09-13 19:18:47.680 17670 17670 I tflite  : Created TensorFlow Lite delegate for GPU.
+09-13 19:18:47.680 17670 17670 I tflite  : GPU delegate created.
+09-13 19:18:47.684 17670 17670 I tflite  : Loaded OpenCL library with dlopen.
+09-13 19:18:47.685 17670 17670 I tflite  : Replacing 511 out of 511 node(s) with delegate (TfLiteGpuDelegateV2) node, yielding 1 partitions for subgraph 0.
+09-13 19:18:48.316 17670 17670 I tflite  : Initialized OpenCL-based API.
+09-13 19:18:48.332 17670 17670 I tflite  : Created 1 GPU delegate kernels.
+09-13 19:18:48.332 17670 17670 I tflite  : Explicitly applied GPU delegate, and the model graph will be completely executed by the delegate.
+09-13 19:18:48.332 17670 17670 I tflite  : The input model file size (MB): 10.0048
+09-13 19:18:48.332 17670 17670 I tflite  : Initialized session in 653.605ms.
+09-13 19:18:48.335 17670 17670 I tflite  : Running benchmark for at least 1 iterations and at least 0.5 seconds but terminate if exceeding 150 seconds.
+09-13 19:18:48.847 17670 17670 I tflite  : count=33 first=21408 curr=12919 min=12641 max=21408 avg=15449.6 std=2522 p5=12651 median=14214 p95=20306
+09-13 19:18:48.847 17670 17670 I tflite  : Running benchmark for at least 25 iterations and at least 1 seconds but terminate if exceeding 150 seconds.
+09-13 19:18:49.855 17670 17670 I tflite  : count=86 first=13871 curr=10581 min=9466 max=14987 avg=11591.3 std=1137 p5=9943 median=11593 p95=13864
+09-13 19:18:49.855 17670 17670 I tflite  : Inference timings in us: Init: 653605, First inference: 21408, Warmup (avg): 15449.6, Inference (avg): 11591.3
+09-13 19:18:49.855 17670 17670 I tflite  : Note: as the benchmark tool itself affects memory footprint, the following is only APPROXIMATE to the actual memory footprint of the model at runtime. Take the information at your discretion.
+09-13 19:18:49.855 17670 17670 I tflite  : Memory footprint delta from the start of the tool (MB): init=108.164 overall=109.246
+
+
+======================================================================
+last__fp32__i320__e2e0.tflite @ nnapi
+======================================================================
+--------- beginning of main
+09-13 19:19:33.337 17801 17801 I tflite  : Log parameter values verbosely: [0]
+09-13 19:19:33.337 17801 17801 I tflite  : Min num runs: [25]
+09-13 19:19:33.337 17801 17801 I tflite  : Num threads: [4]
+09-13 19:19:33.337 17801 17801 I tflite  : Graph: [/data/local/tmp/last__fp32__i320__e2e0.tflite]
+09-13 19:19:33.337 17801 17801 I tflite  : Signature to run: []
+09-13 19:19:33.337 17801 17801 I tflite  : #threads used for CPU inference: [4]
+09-13 19:19:33.337 17801 17801 I tflite  : Use gpu: [0]
+09-13 19:19:33.337 17801 17801 I tflite  : Use NNAPI: [1]
+09-13 19:19:33.368 17801 17801 I tflite  : NNAPI accelerators available: [mtk-dsp_shim,mtk-mdla_shim,mtk-neuron_shim,nnapi-reference]
+09-13 19:19:33.369 17801 17801 I tflite  : Loaded model /data/local/tmp/last__fp32__i320__e2e0.tflite
+09-13 19:19:33.369 17801 17801 I tflite  : Initialized TensorFlow Lite runtime.
+09-13 19:19:33.370 17801 17801 I tflite  : Created TensorFlow Lite delegate for NNAPI.
+09-13 19:19:33.370 17801 17801 I tflite  : NNAPI delegate created.
+09-13 19:19:33.370 17801 17801 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:19:34.615 17801 17801 I tflite  : Replacing 504 out of 511 node(s) with delegate (TfLiteNnapiDelegate) node, yielding 15 partitions for subgraph 0.
+09-13 19:19:34.615 17801 17801 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:19:34.617 17801 17801 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:19:34.617 17801 17801 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:19:34.617 17801 17801 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:19:34.618 17801 17801 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:19:34.618 17801 17801 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:19:34.620 17801 17801 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:19:34.620 17801 17801 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:19:45.207 17801 17801 I tflite  : Explicitly applied NNAPI delegate, and the model graph will be partially executed by the delegate w/ 8 delegate kernels.
+09-13 19:19:45.209 17801 17801 I tflite  : Created TensorFlow Lite XNNPACK delegate for CPU.
+09-13 19:19:45.209 17801 17801 I tflite  : Replacing 4 out of 15 node(s) with delegate (TfLiteXNNPackDelegate) node, yielding 9 partitions for subgraph 0.
+09-13 19:19:45.209 17801 17801 I tflite  : The input model file size (MB): 10.0048
+09-13 19:19:45.209 17801 17801 I tflite  : Initialized session in 11840.9ms.
+09-13 19:19:45.212 17801 17801 I tflite  : Running benchmark for at least 1 iterations and at least 0.5 seconds but terminate if exceeding 150 seconds.
+09-13 19:19:45.732 17801 17801 I tflite  : count=5 first=328171 curr=46859 min=46615 max=328171 avg=103909 std=112139 p5=46615 median=47469 p95=328171
+09-13 19:19:45.732 17801 17801 I tflite  : Running benchmark for at least 25 iterations and at least 1 seconds but terminate if exceeding 150 seconds.
+09-13 19:19:46.899 17801 17801 I tflite  : count=25 first=46563 curr=45304 min=45304 max=48620 avg=46578.8 std=796 p5=45481 median=46563 p95=48422
+09-13 19:19:46.899 17801 17801 I tflite  : Inference timings in us: Init: 11840908, First inference: 328171, Warmup (avg): 103909, Inference (avg): 46578.8
+09-13 19:19:46.899 17801 17801 I tflite  : Note: as the benchmark tool itself affects memory footprint, the following is only APPROXIMATE to the actual memory footprint of the model at runtime. Take the information at your discretion.
+09-13 19:19:46.899 17801 17801 I tflite  : Memory footprint delta from the start of the tool (MB): init=30.2734 overall=48.3281
+
+
+======================================================================
+last__fp32__i320__e2e1.tflite @ gpu
+======================================================================
+--------- beginning of main
+09-13 19:20:19.050 17972 17972 I tflite  : Log parameter values verbosely: [0]
+09-13 19:20:19.050 17972 17972 I tflite  : Min num runs: [25]
+09-13 19:20:19.050 17972 17972 I tflite  : Num threads: [4]
+09-13 19:20:19.050 17972 17972 I tflite  : Graph: [/data/local/tmp/last__fp32__i320__e2e1.tflite]
+09-13 19:20:19.050 17972 17972 I tflite  : Signature to run: []
+09-13 19:20:19.050 17972 17972 I tflite  : #threads used for CPU inference: [4]
+09-13 19:20:19.050 17972 17972 I tflite  : Use gpu: [1]
+09-13 19:20:19.050 17972 17972 I tflite  : Use NNAPI: [0]
+09-13 19:20:19.057 17972 17972 I tflite  : Loaded model /data/local/tmp/last__fp32__i320__e2e1.tflite
+09-13 19:20:19.057 17972 17972 I tflite  : Initialized TensorFlow Lite runtime.
+09-13 19:20:19.058 17972 17972 I tflite  : Created TensorFlow Lite delegate for GPU.
+09-13 19:20:19.058 17972 17972 I tflite  : GPU delegate created.
+09-13 19:20:19.059 17972 17972 I tflite  : Loaded OpenCL library with dlopen.
+09-13 19:20:19.060 17972 17972 E tflite  : Following operations are not supported by GPU delegate:
+09-13 19:20:19.060 17972 17972 E tflite  : ADD: Max version supported: 2. Requested version 4.
+09-13 19:20:19.060 17972 17972 E tflite  : CAST: Not supported Cast case. Input type: INT32 and output type: INT64
+09-13 19:20:19.060 17972 17972 E tflite  : CAST: Not supported Cast case. Input type: INT64 and output type: FLOAT32
+09-13 19:20:19.060 17972 17972 E tflite  : CAST: Not supported Cast case. Input type: INT64 and output type: INT32
+09-13 19:20:19.060 17972 17972 E tflite  : CONCATENATION: OP is supported, but tensor type/shape isn't compatible.
+09-13 19:20:19.060 17972 17972 E tflite  : DIV: OP is supported, but tensor type/shape isn't compatible.
+09-13 19:20:19.060 17972 17972 E tflite  : FLOOR_MOD: OP is supported, but tensor type/shape isn't compatible.
+09-13 19:20:19.060 17972 17972 E tflite  : GATHER_ND: Operation is not supported.
+09-13 19:20:19.060 17972 17972 E tflite  : LESS: Not supported logical op case.
+09-13 19:20:19.060 17972 17972 E tflite  : NOT_EQUAL: Not supported logical op case.
+09-13 19:20:19.060 17972 17972 E tflite  : RESHAPE: OP is supported, but tensor type/shape isn't compatible.
+09-13 19:20:19.060 17972 17972 E tflite  : SELECT: OP is supported, but tensor type/shape isn't compatible.
+09-13 19:20:19.060 17972 17972 E tflite  : SELECT_V2: Cond must be float or bool type, if, else tensors must be either be same the shape as output or constant, scalar.
+09-13 19:20:19.060 17972 17972 E tflite  : SIGN: OP is supported, but tensor type/shape isn't compatible.
+09-13 19:20:19.060 17972 17972 E tflite  : SUB: OP is supported, but tensor type/shape isn't compatib
+09-13 19:20:19.060 17972 17972 I tflite  : Replacing 54 out of 559 node(s) with delegate (TfLiteGpuDelegateV2) node, yielding 3 partitions for subgraph 0.
+09-13 19:20:19.186 17972 17972 I tflite  : Initialized OpenCL-based API.
+09-13 19:20:19.205 17972 17972 I tflite  : Created 1 GPU delegate kernels.
+09-13 19:20:19.206 17972 17972 I tflite  : Explicitly applied GPU delegate, and the model graph will be partially executed by the delegate w/ 1 delegate kernels.
+09-13 19:20:19.207 17972 17972 I tflite  : Created TensorFlow Lite XNNPACK delegate for CPU.
+09-13 19:20:19.207 17972 17972 I tflite  : Replacing 456 out of 506 node(s) with delegate (TfLiteXNNPackDelegate) node, yielding 13 partitions for subgraph 0.
+09-13 19:20:19.222 17972 17972 I tflite  : The input model file size (MB): 10.021
+09-13 19:20:19.222 17972 17972 I tflite  : Initialized session in 172.469ms.
+09-13 19:20:19.225 17972 17972 I tflite  : Running benchmark for at least 1 iterations and at least 0.5 seconds but terminate if exceeding 150 seconds.
+09-13 19:20:19.734 17972 17972 I tflite  : count=19 first=41284 curr=20254 min=20254 max=50141 avg=26748.6 std=8915 p5=20254 median=22996 p95=50141
+09-13 19:20:19.734 17972 17972 I tflite  : Running benchmark for at least 25 iterations and at least 1 seconds but terminate if exceeding 150 seconds.
+09-13 19:20:20.738 17972 17972 I tflite  : count=34 first=21454 curr=23919 min=21454 max=56396 avg=29437.9 std=8877 p5=22058 median=27339 p95=52662
+09-13 19:20:20.738 17972 17972 I tflite  : Inference timings in us: Init: 172469, First inference: 41284, Warmup (avg): 26748.6, Inference (avg): 29437.9
+09-13 19:20:20.738 17972 17972 I tflite  : Note: as the benchmark tool itself affects memory footprint, the following is only APPROXIMATE to the actual memory footprint of the model at runtime. Take the information at your discretion.
+09-13 19:20:20.738 17972 17972 I tflite  : Memory footprint delta from the start of the tool (MB): init=85.9219 overall=94.5781
+
+
+======================================================================
+last__fp32__i320__e2e1.tflite @ nnapi
+======================================================================
+--------- beginning of main
+09-13 19:21:04.704 18125 18125 I tflite  : Log parameter values verbosely: [0]
+09-13 19:21:04.704 18125 18125 I tflite  : Min num runs: [25]
+09-13 19:21:04.704 18125 18125 I tflite  : Num threads: [4]
+09-13 19:21:04.704 18125 18125 I tflite  : Graph: [/data/local/tmp/last__fp32__i320__e2e1.tflite]
+09-13 19:21:04.704 18125 18125 I tflite  : Signature to run: []
+09-13 19:21:04.704 18125 18125 I tflite  : #threads used for CPU inference: [4]
+09-13 19:21:04.704 18125 18125 I tflite  : Use gpu: [0]
+09-13 19:21:04.704 18125 18125 I tflite  : Use NNAPI: [1]
+09-13 19:21:04.711 18125 18125 I tflite  : NNAPI accelerators available: [mtk-dsp_shim,mtk-mdla_shim,mtk-neuron_shim,nnapi-reference]
+09-13 19:21:04.712 18125 18125 I tflite  : Loaded model /data/local/tmp/last__fp32__i320__e2e1.tflite
+09-13 19:21:04.712 18125 18125 I tflite  : Initialized TensorFlow Lite runtime.
+09-13 19:21:04.713 18125 18125 I tflite  : Created TensorFlow Lite delegate for NNAPI.
+09-13 19:21:04.713 18125 18125 I tflite  : NNAPI delegate created.
+09-13 19:21:04.713 18125 18125 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:21:04.762 18125 18125 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:21:04.805 18125 18125 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:21:04.860 18125 18125 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:21:04.880 18125 18125 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:21:04.944 18125 18125 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:21:04.965 18125 18125 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:21:05.007 18125 18125 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:21:05.082 18125 18125 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:21:05.095 18125 18125 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:21:05.113 18125 18125 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:21:05.179 18125 18125 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:21:05.199 18125 18125 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:21:05.272 18125 18125 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:21:05.293 18125 18125 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:21:05.364 18125 18125 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:21:05.385 18125 18125 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:21:05.505 18125 18125 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:21:05.525 18125 18125 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:21:05.644 18125 18125 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:21:05.665 18125 18125 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:21:05.772 18125 18125 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:21:05.839 18125 18125 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:21:05.854 18125 18125 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:21:05.870 18125 18125 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:21:05.949 18125 18125 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:21:05.985 18125 18125 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:21:05.996 18125 18125 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:21:06.014 18125 18125 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:21:06.056 18125 18125 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:21:06.068 18125 18125 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:21:06.079 18125 18125 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:21:06.085 18125 18125 I tflite  : Replacing 490 out of 559 node(s) with delegate (TfLiteNnapiDelegate) node, yielding 77 partitions for subgraph 0.
+09-13 19:21:06.085 18125 18125 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:21:06.086 18125 18125 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:21:06.086 18125 18125 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:21:06.086 18125 18125 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:21:06.086 18125 18125 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:21:06.087 18125 18125 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:21:06.087 18125 18125 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:21:06.087 18125 18125 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:21:06.087 18125 18125 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:21:06.087 18125 18125 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:21:06.087 18125 18125 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:21:06.087 18125 18125 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:21:06.088 18125 18125 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:21:06.088 18125 18125 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:21:06.088 18125 18125 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:21:20.790 18125 18125 I tflite  : Explicitly applied NNAPI delegate, and the model graph will be partially executed by the delegate w/ 39 delegate kernels.
+09-13 19:21:20.791 18125 18125 I tflite  : Created TensorFlow Lite XNNPACK delegate for CPU.
+09-13 19:21:20.792 18125 18125 I tflite  : Replacing 29 out of 108 node(s) with delegate (TfLiteXNNPackDelegate) node, yielding 59 partitions for subgraph 0.
+09-13 19:21:20.792 18125 18125 I tflite  : The input model file size (MB): 10.021
+09-13 19:21:20.792 18125 18125 I tflite  : Initialized session in 16080.9ms.
+09-13 19:21:20.794 18125 18125 I tflite  : Running benchmark for at least 1 iterations and at least 0.5 seconds but terminate if exceeding 150 seconds.
+09-13 19:21:21.322 18125 18125 I tflite  : count=2 first=433014 curr=94334 min=94334 max=433014 avg=263674 std=169340 p5=94334 median=433014 p95=433014
+09-13 19:21:21.322 18125 18125 I tflite  : Running benchmark for at least 25 iterations and at least 1 seconds but terminate if exceeding 150 seconds.
+09-13 19:21:23.359 18125 18125 I tflite  : count=25 first=91925 curr=79324 min=78137 max=98016 avg=81409.6 std=4316 p5=79139 median=80020 p95=91925
+09-13 19:21:23.359 18125 18125 I tflite  : Inference timings in us: Init: 16080868, First inference: 433014, Warmup (avg): 263674, Inference (avg): 81409.6
+09-13 19:21:23.359 18125 18125 I tflite  : Note: as the benchmark tool itself affects memory footprint, the following is only APPROXIMATE to the actual memory footprint of the model at runtime. Take the information at your discretion.
+09-13 19:21:23.359 18125 18125 I tflite  : Memory footprint delta from the start of the tool (MB): init=29.5781 overall=63.4688
+
+
+======================================================================
+last__fp32__i416__e2e0.tflite @ gpu
+======================================================================
+--------- beginning of main
+09-13 19:21:50.430 18333 18333 I tflite  : Log parameter values verbosely: [0]
+09-13 19:21:50.430 18333 18333 I tflite  : Min num runs: [25]
+09-13 19:21:50.430 18333 18333 I tflite  : Num threads: [4]
+09-13 19:21:50.430 18333 18333 I tflite  : Graph: [/data/local/tmp/last__fp32__i416__e2e0.tflite]
+09-13 19:21:50.430 18333 18333 I tflite  : Signature to run: []
+09-13 19:21:50.430 18333 18333 I tflite  : #threads used for CPU inference: [4]
+09-13 19:21:50.430 18333 18333 I tflite  : Use gpu: [1]
+09-13 19:21:50.430 18333 18333 I tflite  : Use NNAPI: [0]
+09-13 19:21:50.438 18333 18333 I tflite  : Loaded model /data/local/tmp/last__fp32__i416__e2e0.tflite
+09-13 19:21:50.438 18333 18333 I tflite  : Initialized TensorFlow Lite runtime.
+09-13 19:21:50.439 18333 18333 I tflite  : Created TensorFlow Lite delegate for GPU.
+09-13 19:21:50.439 18333 18333 I tflite  : GPU delegate created.
+09-13 19:21:50.439 18333 18333 I tflite  : Loaded OpenCL library with dlopen.
+09-13 19:21:50.440 18333 18333 I tflite  : Replacing 511 out of 511 node(s) with delegate (TfLiteGpuDelegateV2) node, yielding 1 partitions for subgraph 0.
+
+
+======================================================================
+last__fp32__i416__e2e0.tflite @ nnapi
+======================================================================
+--------- beginning of main
+09-13 19:22:36.089 18496 18496 I tflite  : Log parameter values verbosely: [0]
+09-13 19:22:36.089 18496 18496 I tflite  : Min num runs: [25]
+09-13 19:22:36.089 18496 18496 I tflite  : Num threads: [4]
+09-13 19:22:36.089 18496 18496 I tflite  : Graph: [/data/local/tmp/last__fp32__i416__e2e0.tflite]
+09-13 19:22:36.089 18496 18496 I tflite  : Signature to run: []
+09-13 19:22:36.089 18496 18496 I tflite  : #threads used for CPU inference: [4]
+09-13 19:22:36.089 18496 18496 I tflite  : Use gpu: [0]
+09-13 19:22:36.089 18496 18496 I tflite  : Use NNAPI: [1]
+09-13 19:22:36.098 18496 18496 I tflite  : NNAPI accelerators available: [mtk-dsp_shim,mtk-mdla_shim,mtk-neuron_shim,nnapi-reference]
+09-13 19:22:36.098 18496 18496 I tflite  : Loaded model /data/local/tmp/last__fp32__i416__e2e0.tflite
+09-13 19:22:36.098 18496 18496 I tflite  : Initialized TensorFlow Lite runtime.
+09-13 19:22:36.099 18496 18496 I tflite  : Created TensorFlow Lite delegate for NNAPI.
+09-13 19:22:36.099 18496 18496 I tflite  : NNAPI delegate created.
+09-13 19:22:36.099 18496 18496 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:22:37.236 18496 18496 I tflite  : Replacing 504 out of 511 node(s) with delegate (TfLiteNnapiDelegate) node, yielding 15 partitions for subgraph 0.
+09-13 19:22:37.236 18496 18496 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:22:37.239 18496 18496 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:22:37.239 18496 18496 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:22:37.239 18496 18496 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:22:37.239 18496 18496 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:22:37.240 18496 18496 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:22:37.241 18496 18496 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:22:37.241 18496 18496 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:22:48.842 18496 18496 I tflite  : Explicitly applied NNAPI delegate, and the model graph will be partially executed by the delegate w/ 8 delegate kernels.
+09-13 19:22:48.844 18496 18496 I tflite  : Created TensorFlow Lite XNNPACK delegate for CPU.
+09-13 19:22:48.844 18496 18496 I tflite  : Replacing 4 out of 15 node(s) with delegate (TfLiteXNNPackDelegate) node, yielding 9 partitions for subgraph 0.
+09-13 19:22:48.844 18496 18496 I tflite  : The input model file size (MB): 10.0751
+09-13 19:22:48.844 18496 18496 I tflite  : Initialized session in 12746.3ms.
+09-13 19:22:48.848 18496 18496 I tflite  : Running benchmark for at least 1 iterations and at least 0.5 seconds but terminate if exceeding 150 seconds.
+09-13 19:22:49.387 18496 18496 I tflite  : count=4 first=359496 curr=58430 min=58430 max=359496 avg=134485 std=129915 p5=58430 median=61509 p95=359496
+09-13 19:22:49.387 18496 18496 I tflite  : Running benchmark for at least 25 iterations and at least 1 seconds but terminate if exceeding 150 seconds.
+09-13 19:22:50.861 18496 18496 I tflite  : count=25 first=58457 curr=60175 min=57535 max=62325 avg=58846.8 std=997 p5=57673 median=58726 p95=60175
+09-13 19:22:50.861 18496 18496 I tflite  : Inference timings in us: Init: 12746297, First inference: 359496, Warmup (avg): 134485, Inference (avg): 58846.8
+09-13 19:22:50.861 18496 18496 I tflite  : Note: as the benchmark tool itself affects memory footprint, the following is only APPROXIMATE to the actual memory footprint of the model at runtime. Take the information at your discretion.
+09-13 19:22:50.861 18496 18496 I tflite  : Memory footprint delta from the start of the tool (MB): init=30.3359 overall=62.5938
+
+
+======================================================================
+last__fp32__i416__e2e1.tflite @ gpu
+======================================================================
+--------- beginning of main
+09-13 19:23:21.978 18654 18654 I tflite  : Log parameter values verbosely: [0]
+09-13 19:23:21.978 18654 18654 I tflite  : Min num runs: [25]
+09-13 19:23:21.979 18654 18654 I tflite  : Num threads: [4]
+09-13 19:23:21.979 18654 18654 I tflite  : Graph: [/data/local/tmp/last__fp32__i416__e2e1.tflite]
+09-13 19:23:21.979 18654 18654 I tflite  : Signature to run: []
+09-13 19:23:21.979 18654 18654 I tflite  : #threads used for CPU inference: [4]
+09-13 19:23:21.979 18654 18654 I tflite  : Use gpu: [1]
+09-13 19:23:21.979 18654 18654 I tflite  : Use NNAPI: [0]
+09-13 19:23:21.989 18654 18654 I tflite  : Loaded model /data/local/tmp/last__fp32__i416__e2e1.tflite
+09-13 19:23:21.989 18654 18654 I tflite  : Initialized TensorFlow Lite runtime.
+09-13 19:23:21.990 18654 18654 I tflite  : Created TensorFlow Lite delegate for GPU.
+09-13 19:23:21.990 18654 18654 I tflite  : GPU delegate created.
+09-13 19:23:21.990 18654 18654 I tflite  : Loaded OpenCL library with dlopen.
+09-13 19:23:21.992 18654 18654 E tflite  : Following operations are not supported by GPU delegate:
+09-13 19:23:21.992 18654 18654 E tflite  : ADD: Max version supported: 2. Requested version 4.
+09-13 19:23:21.992 18654 18654 E tflite  : CAST: Not supported Cast case. Input type: INT32 and output type: INT64
+09-13 19:23:21.992 18654 18654 E tflite  : CAST: Not supported Cast case. Input type: INT64 and output type: FLOAT32
+09-13 19:23:21.992 18654 18654 E tflite  : CAST: Not supported Cast case. Input type: INT64 and output type: INT32
+09-13 19:23:21.992 18654 18654 E tflite  : CONCATENATION: OP is supported, but tensor type/shape isn't compatible.
+09-13 19:23:21.992 18654 18654 E tflite  : DIV: OP is supported, but tensor type/shape isn't compatible.
+09-13 19:23:21.992 18654 18654 E tflite  : FLOOR_MOD: OP is supported, but tensor type/shape isn't compatible.
+09-13 19:23:21.992 18654 18654 E tflite  : GATHER_ND: Operation is not supported.
+09-13 19:23:21.992 18654 18654 E tflite  : LESS: Not supported logical op case.
+09-13 19:23:21.992 18654 18654 E tflite  : NOT_EQUAL: Not supported logical op case.
+09-13 19:23:21.992 18654 18654 E tflite  : RESHAPE: OP is supported, but tensor type/shape isn't compatible.
+09-13 19:23:21.992 18654 18654 E tflite  : SELECT: OP is supported, but tensor type/shape isn't compatible.
+09-13 19:23:21.992 18654 18654 E tflite  : SELECT_V2: Cond must be float or bool type, if, else tensors must be either be same the shape as output or constant, scalar.
+09-13 19:23:21.992 18654 18654 E tflite  : SIGN: OP is supported, but tensor type/shape isn't compatible.
+09-13 19:23:21.992 18654 18654 E tflite  : SUB: OP is supported, but tensor type/shape isn't compatib
+09-13 19:23:21.992 18654 18654 I tflite  : Replacing 54 out of 559 node(s) with delegate (TfLiteGpuDelegateV2) node, yielding 3 partitions for subgraph 0.
+09-13 19:23:22.118 18654 18654 I tflite  : Initialized OpenCL-based API.
+09-13 19:23:22.137 18654 18654 I tflite  : Created 1 GPU delegate kernels.
+09-13 19:23:22.138 18654 18654 I tflite  : Explicitly applied GPU delegate, and the model graph will be partially executed by the delegate w/ 1 delegate kernels.
+09-13 19:23:22.139 18654 18654 I tflite  : Created TensorFlow Lite XNNPACK delegate for CPU.
+09-13 19:23:22.140 18654 18654 I tflite  : Replacing 456 out of 506 node(s) with delegate (TfLiteXNNPackDelegate) node, yielding 13 partitions for subgraph 0.
+09-13 19:23:22.157 18654 18654 I tflite  : The input model file size (MB): 10.0914
+09-13 19:23:22.157 18654 18654 I tflite  : Initialized session in 178.449ms.
+09-13 19:23:22.161 18654 18654 I tflite  : Running benchmark for at least 1 iterations and at least 0.5 seconds but terminate if exceeding 150 seconds.
+09-13 19:23:22.667 18654 18654 I tflite  : count=14 first=43942 curr=32802 min=31016 max=43942 avg=35990.5 std=3936 p5=31016 median=35036 p95=43942
+09-13 19:23:22.667 18654 18654 I tflite  : Running benchmark for at least 25 iterations and at least 1 seconds but terminate if exceeding 150 seconds.
+09-13 19:23:23.682 18654 18654 I tflite  : count=27 first=30032 curr=39392 min=30032 max=61331 avg=37441.8 std=5828 p5=31182 median=37346 p95=42194
+09-13 19:23:23.682 18654 18654 I tflite  : Inference timings in us: Init: 178449, First inference: 43942, Warmup (avg): 35990.5, Inference (avg): 37441.8
+09-13 19:23:23.682 18654 18654 I tflite  : Note: as the benchmark tool itself affects memory footprint, the following is only APPROXIMATE to the actual memory footprint of the model at runtime. Take the information at your discretion.
+09-13 19:23:23.682 18654 18654 I tflite  : Memory footprint delta from the start of the tool (MB): init=96.1211 overall=107.984
+
+
+======================================================================
+last__fp32__i416__e2e1.tflite @ nnapi
+======================================================================
+--------- beginning of main
+09-13 19:24:07.770 18804 18804 I tflite  : Log parameter values verbosely: [0]
+09-13 19:24:07.770 18804 18804 I tflite  : Min num runs: [25]
+09-13 19:24:07.770 18804 18804 I tflite  : Num threads: [4]
+09-13 19:24:07.770 18804 18804 I tflite  : Graph: [/data/local/tmp/last__fp32__i416__e2e1.tflite]
+09-13 19:24:07.770 18804 18804 I tflite  : Signature to run: []
+09-13 19:24:07.770 18804 18804 I tflite  : #threads used for CPU inference: [4]
+09-13 19:24:07.770 18804 18804 I tflite  : Use gpu: [0]
+09-13 19:24:07.770 18804 18804 I tflite  : Use NNAPI: [1]
+09-13 19:24:07.775 18804 18804 I tflite  : NNAPI accelerators available: [mtk-dsp_shim,mtk-mdla_shim,mtk-neuron_shim,nnapi-reference]
+09-13 19:24:07.776 18804 18804 I tflite  : Loaded model /data/local/tmp/last__fp32__i416__e2e1.tflite
+09-13 19:24:07.776 18804 18804 I tflite  : Initialized TensorFlow Lite runtime.
+09-13 19:24:07.777 18804 18804 I tflite  : Created TensorFlow Lite delegate for NNAPI.
+09-13 19:24:07.777 18804 18804 I tflite  : NNAPI delegate created.
+09-13 19:24:07.777 18804 18804 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:24:07.827 18804 18804 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:24:07.870 18804 18804 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:24:07.925 18804 18804 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:24:07.946 18804 18804 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:24:08.011 18804 18804 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:24:08.030 18804 18804 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:24:08.073 18804 18804 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:24:08.148 18804 18804 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:24:08.163 18804 18804 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:24:08.182 18804 18804 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:24:08.249 18804 18804 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:24:08.269 18804 18804 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:24:08.341 18804 18804 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:24:08.362 18804 18804 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:24:08.435 18804 18804 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:24:08.457 18804 18804 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:24:08.576 18804 18804 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:24:08.596 18804 18804 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:24:08.718 18804 18804 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:24:08.738 18804 18804 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:24:08.848 18804 18804 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:24:08.918 18804 18804 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:24:08.932 18804 18804 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:24:08.950 18804 18804 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:24:09.030 18804 18804 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:24:09.065 18804 18804 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:24:09.076 18804 18804 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:24:09.096 18804 18804 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:24:09.138 18804 18804 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:24:09.149 18804 18804 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:24:09.161 18804 18804 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:24:09.166 18804 18804 I tflite  : Replacing 490 out of 559 node(s) with delegate (TfLiteNnapiDelegate) node, yielding 77 partitions for subgraph 0.
+09-13 19:24:09.166 18804 18804 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:24:09.167 18804 18804 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:24:09.167 18804 18804 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:24:09.167 18804 18804 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:24:09.167 18804 18804 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:24:09.168 18804 18804 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:24:09.168 18804 18804 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:24:09.168 18804 18804 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:24:09.168 18804 18804 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:24:09.168 18804 18804 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:24:09.168 18804 18804 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:24:09.168 18804 18804 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:24:09.169 18804 18804 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:24:09.169 18804 18804 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:24:09.169 18804 18804 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:24:24.388 18804 18804 I tflite  : Explicitly applied NNAPI delegate, and the model graph will be partially executed by the delegate w/ 39 delegate kernels.
+09-13 19:24:24.389 18804 18804 I tflite  : Created TensorFlow Lite XNNPACK delegate for CPU.
+09-13 19:24:24.390 18804 18804 I tflite  : Replacing 29 out of 108 node(s) with delegate (TfLiteXNNPackDelegate) node, yielding 59 partitions for subgraph 0.
+09-13 19:24:24.390 18804 18804 I tflite  : The input model file size (MB): 10.0914
+09-13 19:24:24.390 18804 18804 I tflite  : Initialized session in 16614.9ms.
+09-13 19:24:24.395 18804 18804 I tflite  : Running benchmark for at least 1 iterations and at least 0.5 seconds but terminate if exceeding 150 seconds.
+09-13 19:24:24.962 18804 18804 I tflite  : count=2 first=454768 curr=111672 min=111672 max=454768 avg=283220 std=171548 p5=111672 median=454768 p95=454768
+09-13 19:24:24.962 18804 18804 I tflite  : Running benchmark for at least 25 iterations and at least 1 seconds but terminate if exceeding 150 seconds.
+09-13 19:24:27.370 18804 18804 I tflite  : count=25 first=94962 curr=98830 min=94537 max=101667 avg=96177.4 std=1587 p5=94576 median=95552 p95=98830
+09-13 19:24:27.370 18804 18804 I tflite  : Inference timings in us: Init: 16614894, First inference: 454768, Warmup (avg): 283220, Inference (avg): 96177.4
+09-13 19:24:27.370 18804 18804 I tflite  : Note: as the benchmark tool itself affects memory footprint, the following is only APPROXIMATE to the actual memory footprint of the model at runtime. Take the information at your discretion.
+09-13 19:24:27.370 18804 18804 I tflite  : Memory footprint delta from the start of the tool (MB): init=29.9531 overall=88.1641
+
+
+======================================================================
+last__fp32__i512__e2e0.tflite @ gpu
+======================================================================
+--------- beginning of main
+09-13 19:24:53.511 19041 19041 I tflite  : Log parameter values verbosely: [0]
+09-13 19:24:53.511 19041 19041 I tflite  : Min num runs: [25]
+09-13 19:24:53.511 19041 19041 I tflite  : Num threads: [4]
+09-13 19:24:53.511 19041 19041 I tflite  : Graph: [/data/local/tmp/last__fp32__i512__e2e0.tflite]
+09-13 19:24:53.511 19041 19041 I tflite  : Signature to run: []
+09-13 19:24:53.512 19041 19041 I tflite  : #threads used for CPU inference: [4]
+09-13 19:24:53.512 19041 19041 I tflite  : Use gpu: [1]
+09-13 19:24:53.512 19041 19041 I tflite  : Use NNAPI: [0]
+09-13 19:24:53.518 19041 19041 I tflite  : Loaded model /data/local/tmp/last__fp32__i512__e2e0.tflite
+09-13 19:24:53.519 19041 19041 I tflite  : Initialized TensorFlow Lite runtime.
+09-13 19:24:53.520 19041 19041 I tflite  : Created TensorFlow Lite delegate for GPU.
+09-13 19:24:53.520 19041 19041 I tflite  : GPU delegate created.
+09-13 19:24:53.520 19041 19041 I tflite  : Loaded OpenCL library with dlopen.
+09-13 19:24:53.521 19041 19041 I tflite  : Replacing 511 out of 511 node(s) with delegate (TfLiteGpuDelegateV2) node, yielding 1 partitions for subgraph 0.
+09-13 19:24:54.041 19041 19041 I tflite  : Initialized OpenCL-based API.
+09-13 19:24:54.057 19041 19041 I tflite  : Created 1 GPU delegate kernels.
+09-13 19:24:54.057 19041 19041 I tflite  : Explicitly applied GPU delegate, and the model graph will be completely executed by the delegate.
+09-13 19:24:54.057 19041 19041 I tflite  : The input model file size (MB): 10.1639
+09-13 19:24:54.057 19041 19041 I tflite  : Initialized session in 545.795ms.
+09-13 19:24:54.063 19041 19041 I tflite  : Running benchmark for at least 1 iterations and at least 0.5 seconds but terminate if exceeding 150 seconds.
+09-13 19:24:54.582 19041 19041 I tflite  : count=20 first=30930 curr=22066 min=22066 max=30930 avg=25712.3 std=2361 p5=22228 median=25818 p95=30930
+09-13 19:24:54.582 19041 19041 I tflite  : Running benchmark for at least 25 iterations and at least 1 seconds but terminate if exceeding 150 seconds.
+09-13 19:24:55.602 19041 19041 I tflite  : count=47 first=21410 curr=21308 min=19637 max=23066 avg=21497.6 std=887 p5=19724 median=21719 p95=22739
+09-13 19:24:55.602 19041 19041 I tflite  : Inference timings in us: Init: 545795, First inference: 30930, Warmup (avg): 25712.3, Inference (avg): 21497.6
+09-13 19:24:55.602 19041 19041 I tflite  : Note: as the benchmark tool itself affects memory footprint, the following is only APPROXIMATE to the actual memory footprint of the model at runtime. Take the information at your discretion.
+09-13 19:24:55.602 19041 19041 I tflite  : Memory footprint delta from the start of the tool (MB): init=113.609 overall=121
+
+
+======================================================================
+last__fp32__i512__e2e0.tflite @ nnapi
+======================================================================
+--------- beginning of main
+09-13 19:25:39.194 19176 19176 I tflite  : Log parameter values verbosely: [0]
+09-13 19:25:39.194 19176 19176 I tflite  : Min num runs: [25]
+09-13 19:25:39.195 19176 19176 I tflite  : Num threads: [4]
+09-13 19:25:39.195 19176 19176 I tflite  : Graph: [/data/local/tmp/last__fp32__i512__e2e0.tflite]
+09-13 19:25:39.195 19176 19176 I tflite  : Signature to run: []
+09-13 19:25:39.195 19176 19176 I tflite  : #threads used for CPU inference: [4]
+09-13 19:25:39.195 19176 19176 I tflite  : Use gpu: [0]
+09-13 19:25:39.195 19176 19176 I tflite  : Use NNAPI: [1]
+09-13 19:25:39.200 19176 19176 I tflite  : NNAPI accelerators available: [mtk-dsp_shim,mtk-mdla_shim,mtk-neuron_shim,nnapi-reference]
+09-13 19:25:39.200 19176 19176 I tflite  : Loaded model /data/local/tmp/last__fp32__i512__e2e0.tflite
+09-13 19:25:39.200 19176 19176 I tflite  : Initialized TensorFlow Lite runtime.
+09-13 19:25:39.201 19176 19176 I tflite  : Created TensorFlow Lite delegate for NNAPI.
+09-13 19:25:39.201 19176 19176 I tflite  : NNAPI delegate created.
+09-13 19:25:39.201 19176 19176 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:25:40.331 19176 19176 I tflite  : Replacing 504 out of 511 node(s) with delegate (TfLiteNnapiDelegate) node, yielding 15 partitions for subgraph 0.
+09-13 19:25:40.331 19176 19176 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:25:40.333 19176 19176 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:25:40.333 19176 19176 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:25:40.334 19176 19176 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:25:40.334 19176 19176 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:25:40.334 19176 19176 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:25:40.336 19176 19176 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:25:40.336 19176 19176 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:25:51.038 19176 19176 I tflite  : Explicitly applied NNAPI delegate, and the model graph will be partially executed by the delegate w/ 8 delegate kernels.
+09-13 19:25:51.040 19176 19176 I tflite  : Created TensorFlow Lite XNNPACK delegate for CPU.
+09-13 19:25:51.041 19176 19176 I tflite  : Replacing 4 out of 15 node(s) with delegate (TfLiteXNNPackDelegate) node, yielding 9 partitions for subgraph 0.
+09-13 19:25:51.043 19176 19176 I tflite  : The input model file size (MB): 10.1639
+09-13 19:25:51.043 19176 19176 I tflite  : Initialized session in 11843.5ms.
+09-13 19:25:51.050 19176 19176 I tflite  : Running benchmark for at least 1 iterations and at least 0.5 seconds but terminate if exceeding 150 seconds.
+09-13 19:25:51.650 19176 19176 I tflite  : count=2 first=433285 curr=165556 min=165556 max=433285 avg=299420 std=133864 p5=165556 median=433285 p95=433285
+09-13 19:25:51.650 19176 19176 I tflite  : Running benchmark for at least 25 iterations and at least 1 seconds but terminate if exceeding 150 seconds.
+09-13 19:25:53.587 19176 19176 I tflite  : count=25 first=181852 curr=73665 min=71955 max=181852 avg=77243.1 std=21391 p5=71970 median=72555 p95=78781
+09-13 19:25:53.587 19176 19176 I tflite  : Inference timings in us: Init: 11843502, First inference: 433285, Warmup (avg): 299420, Inference (avg): 77243.1
+09-13 19:25:53.587 19176 19176 I tflite  : Note: as the benchmark tool itself affects memory footprint, the following is only APPROXIMATE to the actual memory footprint of the model at runtime. Take the information at your discretion.
+09-13 19:25:53.587 19176 19176 I tflite  : Memory footprint delta from the start of the tool (MB): init=30.1016 overall=80.6523
+
+
+======================================================================
+last__fp32__i512__e2e1.tflite @ gpu
+======================================================================
+--------- beginning of main
+09-13 19:26:24.870 19330 19330 I tflite  : Log parameter values verbosely: [0]
+09-13 19:26:24.870 19330 19330 I tflite  : Min num runs: [25]
+09-13 19:26:24.870 19330 19330 I tflite  : Num threads: [4]
+09-13 19:26:24.870 19330 19330 I tflite  : Graph: [/data/local/tmp/last__fp32__i512__e2e1.tflite]
+09-13 19:26:24.870 19330 19330 I tflite  : Signature to run: []
+09-13 19:26:24.870 19330 19330 I tflite  : #threads used for CPU inference: [4]
+09-13 19:26:24.870 19330 19330 I tflite  : Use gpu: [1]
+09-13 19:26:24.871 19330 19330 I tflite  : Use NNAPI: [0]
+09-13 19:26:24.881 19330 19330 I tflite  : Loaded model /data/local/tmp/last__fp32__i512__e2e1.tflite
+09-13 19:26:24.881 19330 19330 I tflite  : Initialized TensorFlow Lite runtime.
+09-13 19:26:24.882 19330 19330 I tflite  : Created TensorFlow Lite delegate for GPU.
+09-13 19:26:24.882 19330 19330 I tflite  : GPU delegate created.
+09-13 19:26:24.883 19330 19330 I tflite  : Loaded OpenCL library with dlopen.
+09-13 19:26:24.884 19330 19330 E tflite  : Following operations are not supported by GPU delegate:
+09-13 19:26:24.884 19330 19330 E tflite  : ADD: Max version supported: 2. Requested version 4.
+09-13 19:26:24.884 19330 19330 E tflite  : CAST: Not supported Cast case. Input type: INT32 and output type: INT64
+09-13 19:26:24.884 19330 19330 E tflite  : CAST: Not supported Cast case. Input type: INT64 and output type: FLOAT32
+09-13 19:26:24.884 19330 19330 E tflite  : CAST: Not supported Cast case. Input type: INT64 and output type: INT32
+09-13 19:26:24.884 19330 19330 E tflite  : CONCATENATION: OP is supported, but tensor type/shape isn't compatible.
+09-13 19:26:24.884 19330 19330 E tflite  : DIV: OP is supported, but tensor type/shape isn't compatible.
+09-13 19:26:24.884 19330 19330 E tflite  : FLOOR_MOD: OP is supported, but tensor type/shape isn't compatible.
+09-13 19:26:24.884 19330 19330 E tflite  : GATHER_ND: Operation is not supported.
+09-13 19:26:24.884 19330 19330 E tflite  : LESS: Not supported logical op case.
+09-13 19:26:24.884 19330 19330 E tflite  : NOT_EQUAL: Not supported logical op case.
+09-13 19:26:24.884 19330 19330 E tflite  : RESHAPE: OP is supported, but tensor type/shape isn't compatible.
+09-13 19:26:24.884 19330 19330 E tflite  : SELECT: OP is supported, but tensor type/shape isn't compatible.
+09-13 19:26:24.884 19330 19330 E tflite  : SELECT_V2: Cond must be float or bool type, if, else tensors must be either be same the shape as output or constant, scalar.
+09-13 19:26:24.884 19330 19330 E tflite  : SIGN: OP is supported, but tensor type/shape isn't compatible.
+09-13 19:26:24.884 19330 19330 E tflite  : SUB: OP is supported, but tensor type/shape isn't compatib
+09-13 19:26:24.884 19330 19330 I tflite  : Replacing 54 out of 559 node(s) with delegate (TfLiteGpuDelegateV2) node, yielding 3 partitions for subgraph 0.
+09-13 19:26:25.009 19330 19330 I tflite  : Initialized OpenCL-based API.
+09-13 19:26:25.028 19330 19330 I tflite  : Created 1 GPU delegate kernels.
+09-13 19:26:25.029 19330 19330 I tflite  : Explicitly applied GPU delegate, and the model graph will be partially executed by the delegate w/ 1 delegate kernels.
+09-13 19:26:25.030 19330 19330 I tflite  : Created TensorFlow Lite XNNPACK delegate for CPU.
+09-13 19:26:25.030 19330 19330 I tflite  : Replacing 456 out of 506 node(s) with delegate (TfLiteXNNPackDelegate) node, yielding 13 partitions for subgraph 0.
+09-13 19:26:25.052 19330 19330 I tflite  : The input model file size (MB): 10.1801
+09-13 19:26:25.052 19330 19330 I tflite  : Initialized session in 181.415ms.
+09-13 19:26:25.058 19330 19330 I tflite  : Running benchmark for at least 1 iterations and at least 0.5 seconds but terminate if exceeding 150 seconds.
+09-13 19:26:25.579 19330 19330 I tflite  : count=10 first=59177 curr=47948 min=44735 max=59177 avg=51852.1 std=3728 p5=44735 median=52178 p95=59177
+09-13 19:26:25.579 19330 19330 I tflite  : Running benchmark for at least 25 iterations and at least 1 seconds but terminate if exceeding 150 seconds.
+09-13 19:26:26.823 19330 19330 I tflite  : count=25 first=45282 curr=46535 min=44577 max=59085 avg=49537.4 std=3508 p5=44795 median=50220 p95=54597
+09-13 19:26:26.823 19330 19330 I tflite  : Inference timings in us: Init: 181415, First inference: 59177, Warmup (avg): 51852.1, Inference (avg): 49537.4
+09-13 19:26:26.823 19330 19330 I tflite  : Note: as the benchmark tool itself affects memory footprint, the following is only APPROXIMATE to the actual memory footprint of the model at runtime. Take the information at your discretion.
+09-13 19:26:26.823 19330 19330 I tflite  : Memory footprint delta from the start of the tool (MB): init=108.742 overall=128.867
+
+
+======================================================================
+last__fp32__i512__e2e1.tflite @ nnapi
+======================================================================
+--------- beginning of main
+09-13 19:27:10.551 19475 19475 I tflite  : Log parameter values verbosely: [0]
+09-13 19:27:10.551 19475 19475 I tflite  : Min num runs: [25]
+09-13 19:27:10.551 19475 19475 I tflite  : Num threads: [4]
+09-13 19:27:10.551 19475 19475 I tflite  : Graph: [/data/local/tmp/last__fp32__i512__e2e1.tflite]
+09-13 19:27:10.551 19475 19475 I tflite  : Signature to run: []
+09-13 19:27:10.551 19475 19475 I tflite  : #threads used for CPU inference: [4]
+09-13 19:27:10.551 19475 19475 I tflite  : Use gpu: [0]
+09-13 19:27:10.551 19475 19475 I tflite  : Use NNAPI: [1]
+09-13 19:27:10.557 19475 19475 I tflite  : NNAPI accelerators available: [mtk-dsp_shim,mtk-mdla_shim,mtk-neuron_shim,nnapi-reference]
+09-13 19:27:10.557 19475 19475 I tflite  : Loaded model /data/local/tmp/last__fp32__i512__e2e1.tflite
+09-13 19:27:10.557 19475 19475 I tflite  : Initialized TensorFlow Lite runtime.
+09-13 19:27:10.558 19475 19475 I tflite  : Created TensorFlow Lite delegate for NNAPI.
+09-13 19:27:10.558 19475 19475 I tflite  : NNAPI delegate created.
+09-13 19:27:10.559 19475 19475 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:27:10.609 19475 19475 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:27:10.650 19475 19475 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:27:10.707 19475 19475 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:27:10.727 19475 19475 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:27:10.792 19475 19475 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:27:10.813 19475 19475 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:27:10.855 19475 19475 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:27:10.931 19475 19475 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:27:10.945 19475 19475 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:27:10.961 19475 19475 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:27:11.027 19475 19475 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:27:11.049 19475 19475 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:27:11.123 19475 19475 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:27:11.145 19475 19475 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:27:11.217 19475 19475 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:27:11.237 19475 19475 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:27:11.357 19475 19475 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:27:11.377 19475 19475 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:27:11.497 19475 19475 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:27:11.516 19475 19475 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:27:11.625 19475 19475 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:27:11.692 19475 19475 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:27:11.706 19475 19475 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:27:11.722 19475 19475 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:27:11.802 19475 19475 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:27:11.840 19475 19475 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:27:11.852 19475 19475 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:27:11.870 19475 19475 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:27:11.911 19475 19475 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:27:11.923 19475 19475 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:27:11.934 19475 19475 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:27:11.940 19475 19475 I tflite  : Replacing 490 out of 559 node(s) with delegate (TfLiteNnapiDelegate) node, yielding 77 partitions for subgraph 0.
+09-13 19:27:11.940 19475 19475 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:27:11.940 19475 19475 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:27:11.940 19475 19475 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:27:11.941 19475 19475 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:27:11.941 19475 19475 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:27:11.941 19475 19475 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:27:11.941 19475 19475 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:27:11.942 19475 19475 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:27:11.942 19475 19475 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:27:11.942 19475 19475 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:27:11.942 19475 19475 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:27:11.942 19475 19475 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:27:11.942 19475 19475 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:27:11.942 19475 19475 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:27:11.942 19475 19475 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:27:26.602 19475 19475 I tflite  : Explicitly applied NNAPI delegate, and the model graph will be partially executed by the delegate w/ 39 delegate kernels.
+09-13 19:27:26.604 19475 19475 I tflite  : Created TensorFlow Lite XNNPACK delegate for CPU.
+09-13 19:27:26.604 19475 19475 I tflite  : Replacing 29 out of 108 node(s) with delegate (TfLiteXNNPackDelegate) node, yielding 59 partitions for subgraph 0.
+09-13 19:27:26.605 19475 19475 I tflite  : The input model file size (MB): 10.1801
+09-13 19:27:26.605 19475 19475 I tflite  : Initialized session in 16048.2ms.
+09-13 19:27:26.611 19475 19475 I tflite  : Running benchmark for at least 1 iterations and at least 0.5 seconds but terminate if exceeding 150 seconds.
+09-13 19:27:27.114 19475 19475 I tflite  : count=1 curr=501778 p5=501778 median=501778 p95=501778
+09-13 19:27:27.114 19475 19475 I tflite  : Running benchmark for at least 25 iterations and at least 1 seconds but terminate if exceeding 150 seconds.
+09-13 19:27:29.961 19475 19475 I tflite  : count=25 first=118931 curr=112979 min=110826 max=118931 avg=113709 std=1780 p5=111739 median=113242 p95=118139
+09-13 19:27:29.961 19475 19475 I tflite  : Inference timings in us: Init: 16048187, First inference: 501778, Warmup (avg): 501778, Inference (avg): 113709
+09-13 19:27:29.961 19475 19475 I tflite  : Note: as the benchmark tool itself affects memory footprint, the following is only APPROXIMATE to the actual memory footprint of the model at runtime. Take the information at your discretion.
+09-13 19:27:29.961 19475 19475 I tflite  : Memory footprint delta from the start of the tool (MB): init=29.8672 overall=118.43
+
+
+======================================================================
+last__fp32__i640__e2e0.tflite @ gpu
+======================================================================
+--------- beginning of main
+09-13 19:27:56.345 19670 19670 I tflite  : Log parameter values verbosely: [0]
+09-13 19:27:56.345 19670 19670 I tflite  : Min num runs: [25]
+09-13 19:27:56.345 19670 19670 I tflite  : Num threads: [4]
+09-13 19:27:56.345 19670 19670 I tflite  : Graph: [/data/local/tmp/last__fp32__i640__e2e0.tflite]
+09-13 19:27:56.345 19670 19670 I tflite  : Signature to run: []
+09-13 19:27:56.345 19670 19670 I tflite  : #threads used for CPU inference: [4]
+09-13 19:27:56.345 19670 19670 I tflite  : Use gpu: [1]
+09-13 19:27:56.345 19670 19670 I tflite  : Use NNAPI: [0]
+09-13 19:27:56.353 19670 19670 I tflite  : Loaded model /data/local/tmp/last__fp32__i640__e2e0.tflite
+09-13 19:27:56.354 19670 19670 I tflite  : Initialized TensorFlow Lite runtime.
+09-13 19:27:56.354 19670 19670 I tflite  : Created TensorFlow Lite delegate for GPU.
+09-13 19:27:56.354 19670 19670 I tflite  : GPU delegate created.
+09-13 19:27:56.355 19670 19670 I tflite  : Loaded OpenCL library with dlopen.
+09-13 19:27:56.356 19670 19670 I tflite  : Replacing 511 out of 511 node(s) with delegate (TfLiteGpuDelegateV2) node, yielding 1 partitions for subgraph 0.
+09-13 19:27:56.881 19670 19670 I tflite  : Initialized OpenCL-based API.
+09-13 19:27:56.897 19670 19670 I tflite  : Created 1 GPU delegate kernels.
+09-13 19:27:56.898 19670 19670 I tflite  : Explicitly applied GPU delegate, and the model graph will be completely executed by the delegate.
+09-13 19:27:56.898 19670 19670 I tflite  : The input model file size (MB): 10.3108
+09-13 19:27:56.898 19670 19670 I tflite  : Initialized session in 552.228ms.
+09-13 19:27:56.906 19670 19670 I tflite  : Running benchmark for at least 1 iterations and at least 0.5 seconds but terminate if exceeding 150 seconds.
+09-13 19:27:57.416 19670 19670 I tflite  : count=14 first=40024 curr=34091 min=34091 max=40024 avg=36058.2 std=1573 p5=34091 median=35759 p95=40024
+09-13 19:27:57.416 19670 19670 I tflite  : Running benchmark for at least 25 iterations and at least 1 seconds but terminate if exceeding 150 seconds.
+09-13 19:27:58.444 19670 19670 I tflite  : count=32 first=34434 curr=30626 min=29703 max=34434 avg=31823.4 std=1070 p5=30363 median=31704 p95=34075
+09-13 19:27:58.444 19670 19670 I tflite  : Inference timings in us: Init: 552228, First inference: 40024, Warmup (avg): 36058.2, Inference (avg): 31823.4
+09-13 19:27:58.444 19670 19670 I tflite  : Note: as the benchmark tool itself affects memory footprint, the following is only APPROXIMATE to the actual memory footprint of the model at runtime. Take the information at your discretion.
+09-13 19:27:58.444 19670 19670 I tflite  : Memory footprint delta from the start of the tool (MB): init=123.285 overall=135.789
+
+
+======================================================================
+last__fp32__i640__e2e0.tflite @ nnapi
+======================================================================
+--------- beginning of main
+09-13 19:28:42.025 19800 19800 I tflite  : Log parameter values verbosely: [0]
+09-13 19:28:42.025 19800 19800 I tflite  : Min num runs: [25]
+09-13 19:28:42.025 19800 19800 I tflite  : Num threads: [4]
+09-13 19:28:42.025 19800 19800 I tflite  : Graph: [/data/local/tmp/last__fp32__i640__e2e0.tflite]
+09-13 19:28:42.025 19800 19800 I tflite  : Signature to run: []
+09-13 19:28:42.025 19800 19800 I tflite  : #threads used for CPU inference: [4]
+09-13 19:28:42.025 19800 19800 I tflite  : Use gpu: [0]
+09-13 19:28:42.025 19800 19800 I tflite  : Use NNAPI: [1]
+09-13 19:28:42.031 19800 19800 I tflite  : NNAPI accelerators available: [mtk-dsp_shim,mtk-mdla_shim,mtk-neuron_shim,nnapi-reference]
+09-13 19:28:42.031 19800 19800 I tflite  : Loaded model /data/local/tmp/last__fp32__i640__e2e0.tflite
+09-13 19:28:42.032 19800 19800 I tflite  : Initialized TensorFlow Lite runtime.
+09-13 19:28:42.032 19800 19800 I tflite  : Created TensorFlow Lite delegate for NNAPI.
+09-13 19:28:42.032 19800 19800 I tflite  : NNAPI delegate created.
+09-13 19:28:42.033 19800 19800 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:28:43.166 19800 19800 I tflite  : Replacing 504 out of 511 node(s) with delegate (TfLiteNnapiDelegate) node, yielding 15 partitions for subgraph 0.
+09-13 19:28:43.166 19800 19800 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:28:43.168 19800 19800 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:28:43.168 19800 19800 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:28:43.168 19800 19800 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:28:43.169 19800 19800 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:28:43.169 19800 19800 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:28:43.171 19800 19800 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:28:43.171 19800 19800 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:28:53.588 19800 19800 I tflite  : Explicitly applied NNAPI delegate, and the model graph will be partially executed by the delegate w/ 8 delegate kernels.
+09-13 19:28:53.590 19800 19800 I tflite  : Created TensorFlow Lite XNNPACK delegate for CPU.
+09-13 19:28:53.590 19800 19800 I tflite  : Replacing 4 out of 15 node(s) with delegate (TfLiteXNNPackDelegate) node, yielding 9 partitions for subgraph 0.
+09-13 19:28:53.594 19800 19800 I tflite  : The input model file size (MB): 10.3108
+09-13 19:28:53.594 19800 19800 I tflite  : Initialized session in 11562.6ms.
+09-13 19:28:53.609 19800 19800 I tflite  : Running benchmark for at least 1 iterations and at least 0.5 seconds but terminate if exceeding 150 seconds.
+09-13 19:28:54.138 19800 19800 I tflite  : count=1 curr=526378 p5=526378 median=526378 p95=526378
+09-13 19:28:54.138 19800 19800 I tflite  : Running benchmark for at least 25 iterations and at least 1 seconds but terminate if exceeding 150 seconds.
+09-13 19:28:56.790 19800 19800 I tflite  : count=25 first=213100 curr=99539 min=97622 max=213100 avg=105778 std=24924 p5=97668 median=98641 p95=159336
+09-13 19:28:56.790 19800 19800 I tflite  : Inference timings in us: Init: 11562615, First inference: 526378, Warmup (avg): 526378, Inference (avg): 105778
+09-13 19:28:56.790 19800 19800 I tflite  : Note: as the benchmark tool itself affects memory footprint, the following is only APPROXIMATE to the actual memory footprint of the model at runtime. Take the information at your discretion.
+09-13 19:28:56.790 19800 19800 I tflite  : Memory footprint delta from the start of the tool (MB): init=30.7734 overall=112.156
+
+
+======================================================================
+last__fp32__i640__e2e1.tflite @ gpu
+======================================================================
+--------- beginning of main
+09-13 19:29:27.786 19963 19963 I tflite  : Log parameter values verbosely: [0]
+09-13 19:29:27.786 19963 19963 I tflite  : Min num runs: [25]
+09-13 19:29:27.786 19963 19963 I tflite  : Num threads: [4]
+09-13 19:29:27.786 19963 19963 I tflite  : Graph: [/data/local/tmp/last__fp32__i640__e2e1.tflite]
+09-13 19:29:27.786 19963 19963 I tflite  : Signature to run: []
+09-13 19:29:27.786 19963 19963 I tflite  : #threads used for CPU inference: [4]
+09-13 19:29:27.786 19963 19963 I tflite  : Use gpu: [1]
+09-13 19:29:27.786 19963 19963 I tflite  : Use NNAPI: [0]
+09-13 19:29:27.795 19963 19963 I tflite  : Loaded model /data/local/tmp/last__fp32__i640__e2e1.tflite
+09-13 19:29:27.795 19963 19963 I tflite  : Initialized TensorFlow Lite runtime.
+09-13 19:29:27.796 19963 19963 I tflite  : Created TensorFlow Lite delegate for GPU.
+09-13 19:29:27.796 19963 19963 I tflite  : GPU delegate created.
+09-13 19:29:27.797 19963 19963 I tflite  : Loaded OpenCL library with dlopen.
+09-13 19:29:27.798 19963 19963 E tflite  : Following operations are not supported by GPU delegate:
+09-13 19:29:27.798 19963 19963 E tflite  : ADD: Max version supported: 2. Requested version 4.
+09-13 19:29:27.798 19963 19963 E tflite  : CAST: Not supported Cast case. Input type: INT32 and output type: INT64
+09-13 19:29:27.798 19963 19963 E tflite  : CAST: Not supported Cast case. Input type: INT64 and output type: FLOAT32
+09-13 19:29:27.798 19963 19963 E tflite  : CAST: Not supported Cast case. Input type: INT64 and output type: INT32
+09-13 19:29:27.798 19963 19963 E tflite  : CONCATENATION: OP is supported, but tensor type/shape isn't compatible.
+09-13 19:29:27.798 19963 19963 E tflite  : DIV: OP is supported, but tensor type/shape isn't compatible.
+09-13 19:29:27.798 19963 19963 E tflite  : FLOOR_MOD: OP is supported, but tensor type/shape isn't compatible.
+09-13 19:29:27.798 19963 19963 E tflite  : GATHER_ND: Operation is not supported.
+09-13 19:29:27.798 19963 19963 E tflite  : LESS: Not supported logical op case.
+09-13 19:29:27.798 19963 19963 E tflite  : NOT_EQUAL: Not supported logical op case.
+09-13 19:29:27.798 19963 19963 E tflite  : RESHAPE: OP is supported, but tensor type/shape isn't compatible.
+09-13 19:29:27.798 19963 19963 E tflite  : SELECT: OP is supported, but tensor type/shape isn't compatible.
+09-13 19:29:27.798 19963 19963 E tflite  : SELECT_V2: Cond must be float or bool type, if, else tensors must be either be same the shape as output or constant, scalar.
+09-13 19:29:27.798 19963 19963 E tflite  : SIGN: OP is supported, but tensor type/shape isn't compatible.
+09-13 19:29:27.798 19963 19963 E tflite  : SUB: OP is supported, but tensor type/shape isn't compatib
+09-13 19:29:27.798 19963 19963 I tflite  : Replacing 54 out of 559 node(s) with delegate (TfLiteGpuDelegateV2) node, yielding 3 partitions for subgraph 0.
+09-13 19:29:27.924 19963 19963 I tflite  : Initialized OpenCL-based API.
+09-13 19:29:27.944 19963 19963 I tflite  : Created 1 GPU delegate kernels.
+09-13 19:29:27.945 19963 19963 I tflite  : Explicitly applied GPU delegate, and the model graph will be partially executed by the delegate w/ 1 delegate kernels.
+09-13 19:29:27.946 19963 19963 I tflite  : Created TensorFlow Lite XNNPACK delegate for CPU.
+09-13 19:29:27.946 19963 19963 I tflite  : Replacing 456 out of 506 node(s) with delegate (TfLiteXNNPackDelegate) node, yielding 13 partitions for subgraph 0.
+09-13 19:29:27.974 19963 19963 I tflite  : The input model file size (MB): 10.327
+09-13 19:29:27.974 19963 19963 I tflite  : Initialized session in 187.49ms.
+09-13 19:29:27.983 19963 19963 I tflite  : Running benchmark for at least 1 iterations and at least 0.5 seconds but terminate if exceeding 150 seconds.
+09-13 19:29:28.486 19963 19963 I tflite  : count=7 first=78041 curr=66460 min=64807 max=78041 avg=71390.7 std=4224 p5=64807 median=71967 p95=78041
+09-13 19:29:28.486 19963 19963 I tflite  : Running benchmark for at least 25 iterations and at least 1 seconds but terminate if exceeding 150 seconds.
+09-13 19:29:30.296 19963 19963 I tflite  : count=25 first=69770 curr=74754 min=66385 max=78260 avg=72057.1 std=3042 p5=66465 median=72602 p95=77123
+09-13 19:29:30.296 19963 19963 I tflite  : Inference timings in us: Init: 187490, First inference: 78041, Warmup (avg): 71390.7, Inference (avg): 72057.1
+09-13 19:29:30.296 19963 19963 I tflite  : Note: as the benchmark tool itself affects memory footprint, the following is only APPROXIMATE to the actual memory footprint of the model at runtime. Take the information at your discretion.
+09-13 19:29:30.296 19963 19963 I tflite  : Memory footprint delta from the start of the tool (MB): init=132.191 overall=160.66
+
+
+======================================================================
+last__fp32__i640__e2e1.tflite @ nnapi
+======================================================================
+--------- beginning of main
+09-13 19:30:13.633 20092 20092 I tflite  : Log parameter values verbosely: [0]
+09-13 19:30:13.633 20092 20092 I tflite  : Min num runs: [25]
+09-13 19:30:13.633 20092 20092 I tflite  : Num threads: [4]
+09-13 19:30:13.633 20092 20092 I tflite  : Graph: [/data/local/tmp/last__fp32__i640__e2e1.tflite]
+09-13 19:30:13.633 20092 20092 I tflite  : Signature to run: []
+09-13 19:30:13.633 20092 20092 I tflite  : #threads used for CPU inference: [4]
+09-13 19:30:13.633 20092 20092 I tflite  : Use gpu: [0]
+09-13 19:30:13.633 20092 20092 I tflite  : Use NNAPI: [1]
+09-13 19:30:13.640 20092 20092 I tflite  : NNAPI accelerators available: [mtk-dsp_shim,mtk-mdla_shim,mtk-neuron_shim,nnapi-reference]
+09-13 19:30:13.640 20092 20092 I tflite  : Loaded model /data/local/tmp/last__fp32__i640__e2e1.tflite
+09-13 19:30:13.641 20092 20092 I tflite  : Initialized TensorFlow Lite runtime.
+09-13 19:30:13.641 20092 20092 I tflite  : Created TensorFlow Lite delegate for NNAPI.
+09-13 19:30:13.641 20092 20092 I tflite  : NNAPI delegate created.
+09-13 19:30:13.642 20092 20092 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:30:13.692 20092 20092 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:30:13.734 20092 20092 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:30:13.789 20092 20092 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:30:13.809 20092 20092 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:30:13.874 20092 20092 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:30:13.893 20092 20092 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:30:13.935 20092 20092 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:30:14.010 20092 20092 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:30:14.023 20092 20092 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:30:14.041 20092 20092 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:30:14.107 20092 20092 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:30:14.129 20092 20092 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:30:14.201 20092 20092 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:30:14.222 20092 20092 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:30:14.293 20092 20092 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:30:14.313 20092 20092 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:30:14.433 20092 20092 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:30:14.453 20092 20092 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:30:14.573 20092 20092 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:30:14.594 20092 20092 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:30:14.701 20092 20092 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:30:14.768 20092 20092 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:30:14.782 20092 20092 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:30:14.798 20092 20092 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:30:14.878 20092 20092 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:30:14.915 20092 20092 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:30:14.927 20092 20092 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:30:14.946 20092 20092 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:30:14.989 20092 20092 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:30:15.003 20092 20092 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:30:15.015 20092 20092 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:30:15.019 20092 20092 I tflite  : Replacing 490 out of 559 node(s) with delegate (TfLiteNnapiDelegate) node, yielding 77 partitions for subgraph 0.
+09-13 19:30:15.020 20092 20092 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:30:15.020 20092 20092 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:30:15.020 20092 20092 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:30:15.020 20092 20092 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:30:15.020 20092 20092 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:30:15.021 20092 20092 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:30:15.021 20092 20092 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:30:15.021 20092 20092 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:30:15.021 20092 20092 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:30:15.021 20092 20092 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:30:15.022 20092 20092 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:30:15.022 20092 20092 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:30:15.022 20092 20092 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:30:15.022 20092 20092 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:30:15.022 20092 20092 W tflite  : NNAPI SL driver did not implement SL_ANeuralNetworksDiagnostic_registerCallbacks!
+09-13 19:30:29.371 20092 20092 I tflite  : Explicitly applied NNAPI delegate, and the model graph will be partially executed by the delegate w/ 39 delegate kernels.
+09-13 19:30:29.372 20092 20092 I tflite  : Created TensorFlow Lite XNNPACK delegate for CPU.
+09-13 19:30:29.373 20092 20092 I tflite  : Replacing 29 out of 108 node(s) with delegate (TfLiteXNNPackDelegate) node, yielding 59 partitions for subgraph 0.
+09-13 19:30:29.374 20092 20092 I tflite  : The input model file size (MB): 10.327
+09-13 19:30:29.374 20092 20092 I tflite  : Initialized session in 15733.7ms.
+09-13 19:30:29.383 20092 20092 I tflite  : Running benchmark for at least 1 iterations and at least 0.5 seconds but terminate if exceeding 150 seconds.
+09-13 19:30:29.980 20092 20092 I tflite  : count=1 curr=595613 p5=595613 median=595613 p95=595613
+09-13 19:30:29.980 20092 20092 I tflite  : Running benchmark for at least 25 iterations and at least 1 seconds but terminate if exceeding 150 seconds.
+09-13 19:30:33.667 20092 20092 I tflite  : count=25 first=161695 curr=144716 min=143897 max=161695 avg=147199 std=4083 p5=144028 median=146064 p95=156868
+09-13 19:30:33.667 20092 20092 I tflite  : Inference timings in us: Init: 15733690, First inference: 595613, Warmup (avg): 595613, Inference (avg): 147199
+09-13 19:30:33.667 20092 20092 I tflite  : Note: as the benchmark tool itself affects memory footprint, the following is only APPROXIMATE to the actual memory footprint of the model at runtime. Take the information at your discretion.
+09-13 19:30:33.667 20092 20092 I tflite  : Memory footprint delta from the start of the tool (MB): init=30.8906 overall=170.684
