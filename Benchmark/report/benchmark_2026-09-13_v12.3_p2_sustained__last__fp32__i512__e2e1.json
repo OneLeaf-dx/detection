@@ -1,0 +1,317 @@
+{
+ "device": {
+  "serial": "HA27D9E0",
+  "ro.product.model": "TB373FU",
+  "ro.product.manufacturer": "LENOVO",
+  "ro.board.platform": "mt6897",
+  "ro.soc.model": "MT8792",
+  "ro.build.version.release": "16",
+  "ro.product.cpu.abi": "arm64-v8a"
+ },
+ "model": "last__fp32__i512__e2e1.tflite",
+ "protocol": {
+  "blocks": 10,
+  "last_n": 3,
+  "limit_ms": 40.0,
+  "reserve_ms": 0.0,
+  "setting": "cpu",
+  "threads": 4,
+  "num_runs": 25,
+  "block_flags": "--min_secs=30 --max_secs=32",
+  "registered_in": "docs/v12.3_計畫_高階裝置即時辨識門檻.md (e15e916)"
+ },
+ "cooldown": {
+  "thermal_status": 2,
+  "source": "current_from_hal",
+  "cpu_c": 39.762,
+  "soc_c": 39.762,
+  "skin_c": 34.625,
+  "battery_c": 31.5,
+  "waited_min": 0.0,
+  "reason": "target"
+ },
+ "blocks": [
+  {
+   "block": 1,
+   "start": "2026-09-13T18:57:55",
+   "seconds": 32.5,
+   "ok": true,
+   "avg_ms": 46.43,
+   "eff_ms": 46.43,
+   "min_ms": 36.89,
+   "max_ms": 61.02,
+   "std_ms": 4.03,
+   "inferences": 643,
+   "temps_before": {
+    "thermal_status": 2,
+    "source": "current_from_hal",
+    "cpu_c": 39.924,
+    "soc_c": 39.659,
+    "skin_c": 34.651,
+    "battery_c": 31.5
+   },
+   "temps_after": {
+    "thermal_status": 2,
+    "source": "current_from_hal",
+    "cpu_c": 61.007,
+    "soc_c": 61.007,
+    "skin_c": 47.155,
+    "battery_c": 31.5
+   }
+  },
+  {
+   "block": 2,
+   "start": "2026-09-13T18:58:28",
+   "seconds": 32.4,
+   "ok": true,
+   "avg_ms": 52.86,
+   "eff_ms": 52.86,
+   "min_ms": 40.5,
+   "max_ms": 72.46,
+   "std_ms": 4.35,
+   "inferences": 565,
+   "temps_before": {
+    "thermal_status": 2,
+    "source": "current_from_hal",
+    "cpu_c": 59.9,
+    "soc_c": 59.603,
+    "skin_c": 46.947,
+    "battery_c": 31.5
+   },
+   "temps_after": {
+    "thermal_status": 2,
+    "source": "current_from_hal",
+    "cpu_c": 60.549,
+    "soc_c": 60.549,
+    "skin_c": 47.438,
+    "battery_c": 32.1
+   }
+  },
+  {
+   "block": 3,
+   "start": "2026-09-13T18:59:01",
+   "seconds": 32.5,
+   "ok": true,
+   "avg_ms": 55.44,
+   "eff_ms": 55.44,
+   "min_ms": 43.53,
+   "max_ms": 69.14,
+   "std_ms": 3.65,
+   "inferences": 539,
+   "temps_before": {
+    "thermal_status": 2,
+    "source": "current_from_hal",
+    "cpu_c": 59.848,
+    "soc_c": 59.848,
+    "skin_c": 47.304,
+    "battery_c": 32.1
+   },
+   "temps_after": {
+    "thermal_status": 2,
+    "source": "current_from_hal",
+    "cpu_c": 59.603,
+    "soc_c": 59.603,
+    "skin_c": 47.308,
+    "battery_c": 32.1
+   }
+  },
+  {
+   "block": 4,
+   "start": "2026-09-13T18:59:34",
+   "seconds": 32.5,
+   "ok": true,
+   "avg_ms": 59.43,
+   "eff_ms": 59.43,
+   "min_ms": 46.63,
+   "max_ms": 139.52,
+   "std_ms": 7.46,
+   "inferences": 502,
+   "temps_before": {
+    "thermal_status": 2,
+    "source": "current_from_hal",
+    "cpu_c": 59.116,
+    "soc_c": 58.907,
+    "skin_c": 47.192,
+    "battery_c": 32.1
+   },
+   "temps_after": {
+    "thermal_status": 2,
+    "source": "current_from_hal",
+    "cpu_c": 66.863,
+    "soc_c": 66.626,
+    "skin_c": 47.464,
+    "battery_c": 32.5
+   }
+  },
+  {
+   "block": 5,
+   "start": "2026-09-13T19:00:07",
+   "seconds": 32.4,
+   "ok": true,
+   "avg_ms": 60.82,
+   "eff_ms": 60.82,
+   "min_ms": 47.35,
+   "max_ms": 87.54,
+   "std_ms": 4.85,
+   "inferences": 491,
+   "temps_before": {
+    "thermal_status": 2,
+    "source": "current_from_hal",
+    "cpu_c": 65.601,
+    "soc_c": 63.488,
+    "skin_c": 47.408,
+    "battery_c": 32.5
+   },
+   "temps_after": {
+    "thermal_status": 2,
+    "source": "current_from_hal",
+    "cpu_c": 59.869,
+    "soc_c": 60.901,
+    "skin_c": 47.099,
+    "battery_c": 32.5
+   }
+  },
+  {
+   "block": 6,
+   "start": "2026-09-13T19:00:40",
+   "seconds": 32.5,
+   "ok": true,
+   "avg_ms": 60.51,
+   "eff_ms": 60.51,
+   "min_ms": 48.03,
+   "max_ms": 78.0,
+   "std_ms": 4.82,
+   "inferences": 493,
+   "temps_before": {
+    "thermal_status": 2,
+    "source": "current_from_hal",
+    "cpu_c": 58.44,
+    "soc_c": 58.44,
+    "skin_c": 47.005,
+    "battery_c": 32.5
+   },
+   "temps_after": {
+    "thermal_status": 2,
+    "source": "current_from_hal",
+    "cpu_c": 58.855,
+    "soc_c": 58.855,
+    "skin_c": 47.151,
+    "battery_c": 32.9
+   }
+  },
+  {
+   "block": 7,
+   "start": "2026-09-13T19:01:13",
+   "seconds": 32.4,
+   "ok": true,
+   "avg_ms": 61.79,
+   "eff_ms": 61.79,
+   "min_ms": 48.21,
+   "max_ms": 80.41,
+   "std_ms": 5.23,
+   "inferences": 483,
+   "temps_before": {
+    "thermal_status": 2,
+    "source": "current_from_hal",
+    "cpu_c": 59.274,
+    "soc_c": 58.026,
+    "skin_c": 47.05,
+    "battery_c": 32.9
+   },
+   "temps_after": {
+    "thermal_status": 2,
+    "source": "current_from_hal",
+    "cpu_c": 58.769,
+    "soc_c": 58.943,
+    "skin_c": 47.139,
+    "battery_c": 32.9
+   }
+  },
+  {
+   "block": 8,
+   "start": "2026-09-13T19:01:46",
+   "seconds": 32.5,
+   "ok": true,
+   "avg_ms": 61.74,
+   "eff_ms": 61.74,
+   "min_ms": 49.0,
+   "max_ms": 77.52,
+   "std_ms": 4.84,
+   "inferences": 484,
+   "temps_before": {
+    "thermal_status": 2,
+    "source": "current_from_hal",
+    "cpu_c": 59.384,
+    "soc_c": 58.492,
+    "skin_c": 47.068,
+    "battery_c": 32.9
+   },
+   "temps_after": {
+    "thermal_status": 2,
+    "source": "current_from_hal",
+    "cpu_c": 58.99,
+    "soc_c": 58.82,
+    "skin_c": 47.188,
+    "battery_c": 33.1
+   }
+  },
+  {
+   "block": 9,
+   "start": "2026-09-13T19:02:19",
+   "seconds": 32.5,
+   "ok": true,
+   "avg_ms": 62.66,
+   "eff_ms": 62.66,
+   "min_ms": 49.0,
+   "max_ms": 80.45,
+   "std_ms": 4.9,
+   "inferences": 476,
+   "temps_before": {
+    "thermal_status": 2,
+    "source": "current_from_hal",
+    "cpu_c": 58.06,
+    "soc_c": 58.06,
+    "skin_c": 47.08,
+    "battery_c": 33.1
+   },
+   "temps_after": {
+    "thermal_status": 2,
+    "source": "current_from_hal",
+    "cpu_c": 59.828,
+    "soc_c": 60.003,
+    "skin_c": 47.151,
+    "battery_c": 33.1
+   }
+  },
+  {
+   "block": 10,
+   "start": "2026-09-13T19:02:52",
+   "seconds": 32.6,
+   "ok": true,
+   "avg_ms": 63.92,
+   "eff_ms": 63.92,
+   "min_ms": 49.48,
+   "max_ms": 85.06,
+   "std_ms": 5.58,
+   "inferences": 467,
+   "temps_before": {
+    "thermal_status": 2,
+    "source": "current_from_hal",
+    "cpu_c": 57.853,
+    "soc_c": 57.853,
+    "skin_c": 47.072,
+    "battery_c": 33.1
+   },
+   "temps_after": {
+    "thermal_status": 2,
+    "source": "current_from_hal",
+    "cpu_c": 58.146,
+    "soc_c": 58.146,
+    "skin_c": 47.106,
+    "battery_c": 33.5
+   }
+  }
+ ],
+ "verdict": "未通過",
+ "worst_last_n_ms": 63.92
+}

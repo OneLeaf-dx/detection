@@ -90,18 +90,29 @@ def run_block(remote: str) -> tuple[dict, str, float]:
     return RB.parse_log(log), log, time.time() - t0
 
 
-def cool_down(target_c: float, max_min: float) -> dict:
+def cool_down(target_c: float, max_min: float, sensor: str = "cpu") -> dict:
+    """冷卻到指定感測器 ≤ target_c，或達時間上限，取先到者。
+
+    2026-09-13 第一組（fp32@512 e2e1）量完後才發現登記沒指定感測器：
+    CPU 閒置一分鐘內就回落，機身（SKIN）卻慢得多，而本機降頻看的正是 SKIN
+    （第二級門檻 45 °C，第一組全程 47 °C）。只看 CPU 會讓下一組在機身仍在
+    降頻區時開跑。因此在第二組開量之前改為可指定感測器，並記錄於結果文件。
+    """
+    key = f"{sensor}_c"
     t0 = time.time()
     while True:
         t = read_temps()
         waited = (time.time() - t0) / 60
-        if t["cpu_c"] is not None and t["cpu_c"] <= target_c:
-            print(f"▷ 冷卻完成：CPU {t['cpu_c']:.1f} °C ≤ {target_c}（{waited:.1f} 分）")
-            return {**t, "waited_min": round(waited, 1), "reason": "target"}
+        if t.get(key) is not None and t[key] <= target_c:
+            print(f"▷ 冷卻完成：{sensor.upper()} {t[key]:.1f} °C ≤ {target_c}（{waited:.1f} 分）")
+            return {**t, "sensor": sensor, "target_c": target_c,
+                    "waited_min": round(waited, 1), "reason": "target"}
         if waited >= max_min:
-            print(f"▷ 冷卻達上限 {max_min} 分：CPU {t['cpu_c']} °C")
-            return {**t, "waited_min": round(waited, 1), "reason": "max_time"}
-        print(f"  冷卻中… CPU {t['cpu_c']} °C（{waited:.1f} 分）", flush=True)
+            print(f"▷ 冷卻達上限 {max_min} 分：{sensor.upper()} {t.get(key)} °C")
+            return {**t, "sensor": sensor, "target_c": target_c,
+                    "waited_min": round(waited, 1), "reason": "max_time"}
+        print(f"  冷卻中… {sensor.upper()} {t.get(key)} °C、CPU {t['cpu_c']} °C（{waited:.1f} 分）",
+              flush=True)
         time.sleep(30)
 
 
@@ -111,6 +122,8 @@ def main() -> None:
     ap.add_argument("--tag", default="sustained")
     ap.add_argument("--cool-to", type=float, default=None, help="開始前先冷卻到 CPU ≤ 此溫度（°C）")
     ap.add_argument("--cool-max-min", type=float, default=10.0)
+    ap.add_argument("--cool-sensor", default="cpu", choices=("cpu", "soc", "skin", "battery"),
+                    help="冷卻看哪個感測器（本機降頻看的是 skin）")
     a = ap.parse_args()
 
     name = a.model if a.model.endswith(".tflite") else f"{a.model}.tflite"
@@ -127,7 +140,8 @@ def main() -> None:
           f"（門檻 {LAT_LIMIT_MS} ms，後處理保留 {reserve} ms）")
     print("═" * 78)
 
-    cool = cool_down(a.cool_to, a.cool_max_min) if a.cool_to is not None else None
+    cool = (cool_down(a.cool_to, a.cool_max_min, a.cool_sensor)
+            if a.cool_to is not None else None)
 
     blocks = []
     for i in range(1, BLOCKS + 1):
