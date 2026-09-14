@@ -123,7 +123,7 @@ function quietChart(extra) {
     x: M + 0.45, y: 3.86, w: CW - 0.9, h: 0.5, isTextBox: true, margin: 0,
     fontFace: F, fontSize: 20, bold: true, color: C.white,
   });
-  s.addText("標註的問題找到根因並修好、交付換成 v5.7、兩台高階裝置上即時辨識成立——但都只到 320 解析度；不新拍照片的前提下，工程手段已經用盡。", {
+  s.addText("標註的問題找到根因並修好、交付權重改用 v5.7 資料集重訓、兩台高階裝置上即時辨識成立——但都只到 320 解析度；不新拍照片的前提下，工程手段已經用盡。", {
     x: M + 0.45, y: 4.46, w: CW - 0.9, h: 0.95, isTextBox: true, margin: 0,
     fontFace: F, fontSize: 18, bold: true, color: C.accent, valign: "top",
   });
@@ -132,7 +132,7 @@ function quietChart(extra) {
     x: M, y: 6.05, w: CW, h: 0.35, isTextBox: true, margin: 0,
     fontFace: F, fontSize: 12, color: "7E9788",
   });
-  s.addNotes("【約 30 秒】開場先講這句話，再進三個數字。全場骨架：標註修好 → 交付換 v5.7（但模型沒變好）→ 即時辨識變成分裝置 → 三個要當場定的決策。");
+  s.addNotes("【約 30 秒】開場先講這句話，再進三個數字。全場骨架：標註修好 → 交付改用 v5.7 資料集重訓（但模型沒變好）→ 即時辨識變成分裝置 → 三個要當場定的決策。");
 }
 
 // =====================================================================
@@ -145,8 +145,8 @@ function quietChart(extra) {
   const items = [
     { n: "5 → 0", size: 54, unit: " 張", lab: "薊馬葉害兩人各標同樣 20 張，框數不一致的照片數",
       so: "改成一張葉子一個框後分歧消失\n兩人畫框重疊度 0.746 → 0.899\n類別保留、全類重標", col: C.mid },
-    { n: "−0.002", size: 54, lab: "交付換成 v5.7 後，標註沒變的八類平均 AP50 變化",
-      so: "換 v5.7 是讓數字可信\n模型並沒有變好", col: C.clay },
+    { n: "−0.002", size: 54, lab: "交付權重改用 v5.7 資料集訓練後，標註沒變的八類平均 AP50 變化",
+      so: "換資料集是讓數字可信\n模型並沒有變好", col: C.clay },
     { n: "38/30/16", size: 40, unit: " FPS", lab: "320 解析度連續跑 5 分鐘後\n平板、手機、662",
       so: "兩台高階機成立、662 不成立\n下一個解析度連續跑都不行", col: C.accent },
   ];
@@ -263,9 +263,9 @@ function quietChart(extra) {
   title(s, "多講一分鐘：為什麼 0.861 不是進步", "新規則讓薊馬葉害的框變大 1.36 倍，而 AP50 只要重疊 ≥ 0.5 就算對——框愈大愈容易算對");
 
   s.addChart(pres.ChartType.bar, [
-    { name: "v11.5（v5.6，舊標註）", labels: ["九類 test mAP50", "八類平均 AP50（標註沒變）", "薊馬葉害 test AP50"],
+    { name: "v11.5（v5.6 資料集，舊標註）", labels: ["九類 test mAP50", "八類平均 AP50（標註沒變）", "薊馬葉害 test AP50"],
       values: [0.80959, 0.85268, 0.4515] },
-    { name: "v5.7（新標註）", labels: ["九類 test mAP50", "八類平均 AP50（標註沒變）", "薊馬葉害 test AP50"],
+    { name: "v11.5（v5.7 資料集，新標註）", labels: ["九類 test mAP50", "八類平均 AP50（標註沒變）", "薊馬葉害 test AP50"],
       values: [0.86118, 0.85082, 0.8453] },
   ], quietChart({
     x: M, y: 1.8, w: 6.7, h: 4.15,
@@ -302,7 +302,7 @@ function quietChart(extra) {
     x: M, y: 6.2, w: CW, h: 0.5, isTextBox: true, margin: 0,
     fontFace: F, fontSize: 17, bold: true, color: C.accent,
   });
-  s.addNotes("【約 1 分鐘】看圖：左邊九類變高、中間八類沒動、右邊薊馬葉害跳上去。那一跳是框定義換掉，不是模型能力。換 v5.7 的理由是數字有解釋力，不是分數變高。");
+  s.addNotes("【約 1 分鐘】看圖：左邊九類變高、中間八類沒動、右邊薊馬葉害跳上去。那一跳是框定義換掉，不是模型能力。模型兩邊都是 v11.5，只換了資料集；換的理由是數字有解釋力，不是分數變高。");
 }
 
 // =====================================================================
@@ -327,7 +327,7 @@ function quietChart(extra) {
   const rx = M + 7.45, rw = CW - 7.45;
   const v = [
     { d: "Snapdragon 662（入門手機）", r: "不成立", c: C.clay, f: C.rose, t: "本來就只有 15–16 FPS，連續跑也不變" },
-    { d: "天璣 8300 平板", r: "成立，只到 320", c: C.mid, f: C.tint, t: "512 短時間 25 FPS 過線，連續跑剩 16" },
+    { d: "天璣 8300 平板", r: "成立，只到 320", c: C.mid, f: C.tint, t: "416 短時間 37 FPS，連續跑剩 24；512 剩 16" },
     { d: "Snapdragon 8 Gen 2 手機", r: "成立，只到 320", c: C.mid, f: C.tint, t: "416 短時間 28 FPS 過線，連續跑剩 19" },
   ];
   v.forEach((it, i) => {
@@ -351,11 +351,11 @@ function quietChart(extra) {
 // =====================================================================
 {
   const s = pres.addSlide(); lightBg(s);
-  title(s, "多講一分鐘：為什麼要量「連續跑」", "連續 10 段、每段約 30 秒的平均延遲（ms）——越高越慢，40 ms 以上就不及格");
+  title(s, "多講一分鐘：為什麼要量「連續跑」", "連續 10 段、每段約 30 秒的平均延遲（ms）——越高越慢，40 ms 以上就不及格　·　平板 416 含 2 ms 後處理保留");
 
   const segs = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
   s.addChart(pres.ChartType.line, [
-    { name: "平板 512", labels: segs, values: [46.43, 52.86, 55.44, 59.43, 60.82, 60.51, 61.79, 61.74, 62.66, 63.92] },
+    { name: "平板 416", labels: segs, values: [31.64, 34.01, 35.83, 36.93, 37.72, 38.97, 39.22, 39.78, 42.63, 41.63] },
     { name: "手機 416", labels: segs, values: [38.64, 35.81, 48.67, 49.35, 48.65, 49.09, 48.78, 51.68, 48.67, 48.74] },
     { name: "662 320", labels: segs, values: [62.31, 62.21, 63.32, 62.90, 62.47, 64.54, 63.22, 63.09, 63.18, 63.08] },
     { name: "門檻 40 ms", labels: segs, values: [40, 40, 40, 40, 40, 40, 40, 40, 40, 40] },
@@ -369,7 +369,7 @@ function quietChart(extra) {
 
   const rx = M + 7.7, rw = CW - 7.7;
   const v = [
-    { d: "平板 · 512 解析度", n: "25 → 16 FPS", c: C.accent, t: "頭 30 秒表面 35 → 47 °C，開始降頻" },
+    { d: "平板 · 416 解析度", n: "37 → 24 FPS", c: C.accent, t: "頭 30 秒表面 34 → 47 °C，第 9 段起超線" },
     { d: "手機 · 416 解析度", n: "28 → 19 FPS", c: C.mid, t: "沒有過熱，第 3 段起整段掉到另一個檔位" },
     { d: "662 · 320 解析度", n: "15 → 16 FPS", c: C.muted, t: "連續 10 段完全沒變慢，只是本來就太慢" },
   ];
@@ -386,7 +386,7 @@ function quietChart(extra) {
     { text: "跑得越快的晶片，連續跑掉得越多：", options: { bold: true, color: C.accent } },
     { text: "平板 1.6–1.7 倍、手機 1.05–1.4 倍、662 不掉。只看短時間的數字，會以為高階機的下一個解析度也可以做即時辨識。", options: { color: C.ink } },
   ], { x: M + 0.3, y: 6.24, w: CW - 0.6, h: 0.66, isTextBox: true, margin: 0, fontFace: F, fontSize: 13.5, valign: "middle" });
-  s.addNotes("【約 1 分 15 秒】指著圖：橘線（平板）一路往上爬、綠線（手機）第 3 段突然跳上去、灰線（662）一直平——除了手機的前兩段，全都在紅線上面。換成畫面感受：相機每秒 30 張，16 FPS 大約每兩張只辨識一張。「掉得越多」的原因（算力高 → 發熱大 → 先降頻）是推測，沒量功耗。");
+  s.addNotes("【約 1 分 15 秒】指著圖：橘線（平板 416）一路往上爬、第 9 段越過紅線；綠線（手機 416）第 3 段突然跳上去；灰線（662）一直平、而且本來就在紅線上面。平板 416 是 09-15 補量的（原本因精度表寫錯而漏量，見備答）；平板 512 更明顯，連續跑剩 16 FPS。換成畫面感受：相機每秒 30 張，16 FPS 大約每兩張只辨識一張。「掉得越多」的原因（算力高 → 發熱大 → 先降頻）是推測，沒量功耗。");
 }
 
 // =====================================================================
@@ -443,7 +443,7 @@ function quietChart(extra) {
     card(s, bx, y0 + 1.72, 1.62, 0.56, C.white);
     s.addText(t, { x: bx, y: y0 + 1.72, w: 1.62, h: 0.56, isTextBox: true, margin: 0, fontFace: F, fontSize: 14, bold: true, color: C.mid, align: "center", valign: "middle" });
   });
-  s.addText("選定之後只需要把 v5.7 的權重重新匯出那一個組合、重評精度。", { x: M + 0.35, y: y0 + 2.6, w: cw - 0.7, h: 0.8, isTextBox: true, margin: 0, fontFace: F, fontSize: 14, color: C.ink, valign: "top" });
+  s.addText("選定之後只需要用交付權重（v5.7 資料集訓練）重新匯出那一個組合、重評精度。", { x: M + 0.35, y: y0 + 2.6, w: cw - 0.7, h: 0.8, isTextBox: true, margin: 0, fontFace: F, fontSize: 14, color: C.ink, valign: "top" });
   s.addText("需要：團隊給「按下快門後多久要出結果」的上限", { x: M + 0.35, y: y0 + 3.55, w: cw - 0.7, h: 0.5, isTextBox: true, margin: 0, fontFace: F, fontSize: 14, bold: true, color: C.accent });
 
   // 決策 3
@@ -471,7 +471,7 @@ function quietChart(extra) {
 
   const items = [
     { h: "決策 1 選「做」", t: "決定裝置分級的方式；需要的話量一支中階機，用同一份判準" },
-    { h: "決策 2 有上限", t: "選定拍照模式的組合，以 v5.7 權重重新匯出並重評精度" },
+    { h: "決策 2 有上限", t: "選定拍照模式的組合，以交付權重重新匯出並重評精度" },
     { h: "決策 3", t: "選「追」→ 發派介殼蟲的一致性測試\n選「不追」→ 收尾文件" },
   ];
   const gap = 0.35, cw = (CW - 2 * gap) / 3;
@@ -514,11 +514,11 @@ function quietChart(extra) {
 }
 
 // =====================================================================
-// 11a. 備答：交付模型 v5.7 的規格與整體指標
+// 11a. 備答：交付模型 v11.5（v5.7 資料集）的規格與整體指標
 // =====================================================================
 {
   const s = pres.addSlide(); lightBg(s);
-  title(s, "交付模型 v5.7：規格與整體指標", "目前交付的權重與它在 valid、test（各 401 張）上的完整數字");
+  title(s, "交付模型 v11.5（v5.7 資料集）：規格與指標", "v5.7 是資料集版本，訓練碼與架構都是 v11.5（run v5.7_v11_5）　·　valid、test 各 401 張");
 
   const lw = 6.3, gap = 0.3, rw = CW - lw - gap;
   const K = { bold: true, color: C.dark };
@@ -541,26 +541,26 @@ function quietChart(extra) {
     [cell("mAP50-95", { bold: true, align: "left" }), cell("0.626", {}), cell("0.641", B)],
     [cell("Precision", { bold: true, align: "left" }), cell("0.852", {}), cell("0.909", B)],
     [cell("Recall", { bold: true, align: "left" }), cell("0.821", {}), cell("0.812", B)],
-    [cell("Detection Jaccard", { bold: true, align: "left" }), cell("—", na), cell("0.729", B)],
-    [cell("TP / FP / FN", { bold: true, align: "left" }), cell("—", na), cell("675 / 116 / 133", B)],
+    [cell("Detection Jaccard", { bold: true, align: "left" }), cell("—", na), cell("0.727", B)],
+    [cell("TP / FP / FN", { bold: true, align: "left" }), cell("—", na), cell("675 / 118 / 135", B)],
     [cell("八類平均 AP50（標註未變動）", { bold: true, align: "left" }), cell("—", na), cell("0.851", B)],
   ], { x: M + lw + gap, y: 1.8, w: rw, colW: [2.55, 1.2, rw - 3.75], rowH: 0.5, ...tblBase, fontSize: 12, align: "center" });
 
   card(s, M, 6.0, CW, 0.78, C.rose);
   s.addText([
     { text: "口徑：", options: { bold: true, color: C.clay } },
-    { text: "九類 test mAP50 0.861 不可與 v11.5 的 0.810 相比（薊馬葉害換了框定義）；標註沒變的八類平均 0.853 → 0.851，等於沒變。手機上的 TFLite 仍是 v11.5 權重匯出。", options: { color: C.ink } },
+    { text: "九類 test mAP50 0.861 不可與上一版（v5.6 資料集）的 0.810 相比（薊馬葉害換了框定義）；標註沒變的八類平均 0.853 → 0.851，等於沒變。手機上的 TFLite 仍是 v11.5（v5.6 資料集）權重匯出。", options: { color: C.ink } },
   ], { x: M + 0.3, y: 6.06, w: CW - 0.6, h: 0.66, isTextBox: true, margin: 0, fontFace: F, fontSize: 12.5, valign: "middle" });
   pageNote(s, "Precision／Recall 取自 ultralytics val()（conf 0.001）；Jaccard 與 TP／FP／FN 取自混淆矩陣（conf 0.25），兩者不在同一工作點　·　來源 docs/v5.7_報告_交付與研究限制.md §1");
   s.addNotes("被問「模型現在幾分」時翻這頁。先講口徑那一行，再報數字：test mAP50 0.861，但不能跟上週的 0.810 比。");
 }
 
 // =====================================================================
-// 11b. 備答：交付模型 v5.7 的九類逐類 AP50
+// 11b. 備答：交付模型 v11.5（v5.7 資料集）的九類逐類 AP50
 // =====================================================================
 {
   const s = pres.addSlide(); lightBg(s);
-  title(s, "交付模型 v5.7：九類逐類 AP50", "valid＋test 併計（pooled，802 張）；九類 ±2SE 全部 ≤ 0.10　·　依 pooled 由高到低");
+  title(s, "交付模型 v11.5（v5.7 資料集）：九類逐類 AP50", "valid＋test 併計（pooled，802 張）；九類 ±2SE 全部 ≤ 0.10　·　依 pooled 由高到低");
   const weak = new Set(["Citrus_Leaf_Miner（潛葉蛾）", "Thrips（薊馬）", "Scale_Insect（介殼蟲）"]);
   const rows = [
     ["Sooty_Mold（煤煙病）", "0.9950", "0.9950", "0.9950", "0.0210", "33 / 32", ""],
@@ -629,21 +629,22 @@ function quietChart(extra) {
 // =====================================================================
 {
   const s = pres.addSlide(); lightBg(s);
-  title(s, "三台 Benchmark 總表（FPS）", "同 8 個 fp32 檔案、同一套量測方法　·　延遲與 mAP50 都來自 v11.5 權重的匯出檔，交付的 v5.7 尚未重新匯出");
+  title(s, "三台 Benchmark 總表（FPS）", "同 8 個 fp32 檔案、同一套量測方法　·　延遲與 mAP50 都來自 v11.5（v5.6 資料集）權重的匯出檔，交付權重尚未重新匯出");
 
   const nm = { color: C.muted, italic: true };
   const B = { bold: true };
   const G = { bold: true, color: C.mid };
   s.addTable([
-    [hdr("組合（end2end 開）"), hdr("662 短時間"), hdr("662 連續跑"), hdr("平板 短時間"), hdr("平板 連續跑"), hdr("手機 短時間"), hdr("手機 連續跑"), hdr("mAP50")],
-    [cell("fp32@320", B), cell("14.9"), cell("15.8"), cell("66.6", G), cell("38.4", G), cell("32.0", G), cell("29.8", G), cell("0.785")],
+    [hdr("組合（未註明者 end2end 開）"), hdr("662 短時間"), hdr("662 連續跑"), hdr("平板 短時間"), hdr("平板 連續跑"), hdr("手機 短時間"), hdr("手機 連續跑"), hdr("mAP50")],
+    [cell("fp32@320", B), cell("14.9"), cell("15.8"), cell("66.6", G), cell("38.4", G), cell("32.0", G), cell("29.8", G), cell("0.780")],
     [cell("fp32@416", B), cell("9.1"), cell("沒量", nm), cell("39.0"), cell("沒量", nm), cell("28.2"), cell("19.3", { color: C.clay, bold: true }), cell("0.800")],
+    [cell("fp32@416 · end2end 關", B), cell("8.8"), cell("沒量", nm), cell("37.1"), cell("23.5", { color: C.clay, bold: true }), cell("20.1"), cell("沒量", nm), cell("0.815")],
     [cell("fp32@512", B), cell("5.8"), cell("沒量", nm), cell("25.4"), cell("15.6", { color: C.clay, bold: true }), cell("18.9"), cell("沒量", nm), cell("0.814")],
     [cell("fp32@640", B), cell("3.7"), cell("沒量", nm), cell("15.9"), cell("沒量", nm), cell("11.8"), cell("沒量", nm), cell("0.816")],
-    [cell("fp32@640 · end2end 關 · GPU", B), cell("3.5"), cell("沒量", nm), cell("29.6"), cell("沒量", nm), cell("30.7"), cell("沒量", nm), cell("0.816")],
+    [cell("fp32@640 · end2end 關 · GPU", B), cell("3.5"), cell("沒量", nm), cell("29.6"), cell("沒量", nm), cell("30.7"), cell("沒量", nm), cell("0.826")],
     [cell("判定", B), cell("不成立", { bold: true, color: C.clay, colspan: 2 }), cell("成立，只到 320", { bold: true, color: C.mid, colspan: 2 }), cell("成立，只到 320", { bold: true, color: C.mid, colspan: 2 }), cell("")],
   ], {
-    x: M, y: 1.85, w: CW, colW: [3.0, 1.28, 1.28, 1.28, 1.28, 1.28, 1.28, 1.253], rowH: 0.48,
+    x: M, y: 1.85, w: CW, colW: [3.0, 1.28, 1.28, 1.28, 1.28, 1.28, 1.28, 1.253], rowH: 0.43,
     ...tblBase, fontSize: 12.5, align: "center",
   });
 
@@ -660,7 +661,7 @@ function quietChart(extra) {
   ], { x: M + cw + gap + 0.3, y: 5.55, w: cw - 0.6, h: 0.9, isTextBox: true, margin: 0, fontFace: F, fontSize: 13.5, valign: "middle" });
 
   pageNote(s, "FPS = 1000 ÷ 有效延遲（end2end 關另加 2 ms）；短時間取 3 輪最快、連續跑取最後 3 段最慢　·　「沒量」是依計畫只量指定組合，不是失敗");
-  s.addNotes("被問到「其他解析度呢」「手機為什麼慢」時翻這頁。紅字是短時間過線、連續跑不過的兩個組合。");
+  s.addNotes("被問到「其他解析度呢」「手機為什麼慢」時翻這頁。紅字是短時間過線、連續跑不過的三個組合（平板 416 end2end 關是 09-15 補量）。mAP50 依匯出報告逐變體列出，end2end 關的精度比開著高約 0.01。");
 }
 
 // =====================================================================
@@ -703,7 +704,7 @@ function quietChart(extra) {
 // =====================================================================
 {
   const s = pres.addSlide(); lightBg(s);
-  title(s, "判準都比量測早", "每一條都可以從 git 紀錄或登記文件查到時間（與報告庫週報表 2-1 一致）");
+  title(s, "判準都比量測早", "每一條都可以從 git 紀錄或登記文件查到時間");
 
   const rows = [
     ["2026-08", "標註一致性門檻：兩人中位 IoU ≥ 0.85", "v11 計畫書", "09-12 才量工作包 A"],
@@ -714,15 +715,16 @@ function quietChart(extra) {
     ["09-13 晚", "320 取 e2e1、兩組之間冷卻看表面溫度", "384db65、3e620fd", "各自在對應那組開跑之前"],
     ["09-13 22:26 前", "溫度讀取改為不分廠牌", "7f6df28", "之後才開始量手機"],
     ["09-13 23:49", "662 補量協定登記", "b465196", "同一分鐘才開始補量"],
+    ["09-15 00:00", "平板補量 416 end2end 關（精度按變體更正後最準的組合）", "f2f76d3", "00:01 才開始量"],
   ];
   rows.forEach((r, i) => {
-    const y = 1.72 + i * 0.6;
-    card(s, M, y, CW, 0.52, i % 2 === 0 ? C.tint2 : C.tint);
-    badge(s, i + 1, M + 0.2, y + 0.07, 0.38, C.mid);
-    s.addText(r[0], { x: M + 0.85, y: y, w: 1.8, h: 0.52, isTextBox: true, margin: 0, fontFace: F, fontSize: 13, bold: true, color: C.dark, valign: "middle" });
-    s.addText(r[1], { x: M + 2.7, y: y, w: 4.9, h: 0.52, isTextBox: true, margin: 0, fontFace: F, fontSize: 13.5, color: C.ink, valign: "middle" });
-    s.addText(r[2], { x: M + 7.65, y: y, w: 1.8, h: 0.52, isTextBox: true, margin: 0, fontFace: /^[0-9a-f]{7}/.test(r[2]) ? "Consolas" : F, fontSize: 12, color: C.muted, valign: "middle" });
-    s.addText(r[3], { x: M + 9.5, y: y, w: CW - 9.7, h: 0.52, isTextBox: true, margin: 0, fontFace: F, fontSize: 12.5, bold: true, color: C.mid, valign: "middle" });
+    const y = 1.72 + i * 0.54;
+    card(s, M, y, CW, 0.47, i % 2 === 0 ? C.tint2 : C.tint);
+    badge(s, i + 1, M + 0.2, y + 0.05, 0.37, C.mid);
+    s.addText(r[0], { x: M + 0.85, y: y, w: 1.8, h: 0.47, isTextBox: true, margin: 0, fontFace: F, fontSize: 13, bold: true, color: C.dark, valign: "middle" });
+    s.addText(r[1], { x: M + 2.7, y: y, w: 4.9, h: 0.47, isTextBox: true, margin: 0, fontFace: F, fontSize: 13, color: C.ink, valign: "middle" });
+    s.addText(r[2], { x: M + 7.65, y: y, w: 1.8, h: 0.47, isTextBox: true, margin: 0, fontFace: /^[0-9a-f]{7}/.test(r[2]) ? "Consolas" : F, fontSize: 12, color: C.muted, valign: "middle" });
+    s.addText(r[3], { x: M + 9.5, y: y, w: CW - 9.7, h: 0.47, isTextBox: true, margin: 0, fontFace: F, fontSize: 12.5, bold: true, color: C.mid, valign: "middle" });
   });
   s.addText("量完之後，判準一條都沒有改。途中補定的都是登記文件沒寫到的細節，而且都寫在結果文件裡。", {
     x: M, y: 6.6, w: CW, h: 0.4, isTextBox: true, margin: 0, fontFace: F, fontSize: 13.5, bold: true, color: C.accent,
@@ -736,7 +738,7 @@ function quietChart(extra) {
 const QA = [
   ["0.861 比 0.810 高，是不是進步了？", "不是。框定義換了，框變大就容易算對；標註沒變的八類平均是 −0.002，等於沒變"],
   ["0.899 是模型的準確度嗎？", "不是。那是兩個人各自畫框的重疊度（IoU 中位數），用來判斷標註規則畫不畫得一致，和模型無關"],
-  ["那為什麼要換成 v5.7？", "舊的薊馬葉害框彼此矛盾，那個類別的數字量到的是標註噪聲；換了之後數字才有解釋力"],
+  ["那為什麼要換成 v5.7 資料集？", "模型還是 v11.5，只換資料集。舊的薊馬葉害框彼此矛盾，那個類別的數字量到的是標註噪聲；換了之後數字才有解釋力"],
   ["為什麼不直接刪掉薊馬葉害？", "它是唯一符合田間場景的薊馬訊號，刪掉數字也不會變好；改規則重測一次就通過了"],
   ["外部照片為什麼沒用？", "那批是摘下的葉子放白紙上拍，跟田間照差很多，而且 124 張只來自約 20–25 片葉子；加資料的潛葉蛾和沒加資料的油斑病動得一樣多"],
   ["兩台高階機都過了，是不是可以做即時辨識？", "只到 320，而且各只有一台；中階裝置沒有量，界線在哪裡不知道"],
@@ -746,9 +748,9 @@ const QA = [
   ["662 連續跑會不會更慢？", "不會。補量時連續跑 10 段都在 63 ms 左右、完全沒變慢；只是本來就只有 16 FPS，離門檻太遠"],
   ["662 的舊數字只量一輪，可信嗎？", "用跟另外兩台一樣的方法（3 輪交錯）重量過了，8 個檔案差距都在 ±3.1% 以內，結論不變"],
   ["GPU 跑 640 只要約 31 ms，為什麼不用？", "只在兩台高階機上成立，662 整張交給 GPU 也沒變快；而且只量一輪、沒連續跑、沒量後處理，要另外登記計畫再量"],
-  ["662 的結論會改嗎？", "不會。662 的問題是晶片速度，換模型、調參數、用 GPU 都補不上"],
+  ["平板 416 上次沒量，現在呢？", "09-15 補量：它是短時間過線中最準的（0.815），當時精度表寫錯才漏掉；照原規則補量，第 9 段起超過 40 ms，平板仍只到 320"],
   ["還有辦法讓模型更準嗎？", "不拍照片的前提下沒有了；剩下量介殼蟲的標註一致性，或補拍照片"],
-  ["這些判準是不是看完結果才訂的？", "不是。每一份判準都比量測早 commit，時間可以從 git 紀錄查到（見前一頁）"],
+  ["這些判準、數字可信嗎？", "判準都比量測早 commit（見前一頁）；09-15 凌晨也用原始輸出把數字全核對過一次，更正處見週報 §5.1"],
 ];
 [QA.slice(0, 7), QA.slice(7)].forEach((part, pi) => {
   const s = pres.addSlide(); lightBg(s);

@@ -1,6 +1,6 @@
 {
  "generated": "2026-09-07",
- "note": "本檔由 scratchpad 的 build_history.py 從各版本的原始輸出直接讀出，非手動抄寫。v5 時代的部分欄位為 null，因為來源文件用圖片嵌入數字、無法解析。 2026-09-08 修正：v11.5 的 test FP 148->149、jaccard 0.68698->0.68627（依存檔 confusion_matrix.csv 逐欄重算，原值把 pred_Black_Spot/true_Oily_Spot 的 2 個框當成 1 個），v11.5 的 P/R/mAP 改採 eval/summary.json 的原值；另補 v11 valid 與 v12s test 的 jaccard。  ⚠ v5.7 起 Thrips_Damage 換了框定義（一葉一框），它的 AP 與 v5.6 以前不可比，連帶整體 mAP50 也不可比——跨版本比較請用去掉該類的八類平均（v5.6 0.85268 / v5.7 0.85082 / v5.7ext 0.85884）。",
+ "note": "本檔由 scratchpad 的 build_history.py 從各版本的原始輸出直接讀出，非手動抄寫。v5 時代的部分欄位為 null，因為來源文件用圖片嵌入數字、無法解析。 2026-09-08 修正：v11.5 的 test FP 148->149、jaccard 0.68698->0.68627（依存檔 confusion_matrix.csv 逐欄重算，原值把 pred_Black_Spot/true_Oily_Spot 的 2 個框當成 1 個），v11.5 的 P/R/mAP 改採 eval/summary.json 的原值；另補 v11 valid 與 v12s test 的 jaccard。 2026-09-15 修正：v5.7_v11_5 與 v5.7ext_v11_5 的 test TP/FP/FN/jaccard 原把跨類誤判從 FP、FN 各扣掉、分母再加一次，與其他版本的算法不同；改依各自的 confusion_matrix.csv 以同一算法重算（675/118/135、0.72737；678/152/132、0.70478，TP+FN 與 GT 810 框吻合）。v5.7_v11_5 的 best_epoch 原填 44（mAP50 最高的輪次），改為與其他版本一致的 mAP50-95 最高輪次 53。  ⚠ v5.7 起 Thrips_Damage 換了框定義（一葉一框），它的 AP 與 v5.6 以前不可比，連帶整體 mAP50 也不可比——跨版本比較請用去掉該類的八類平均（v5.6 0.85268 / v5.7 0.85082 / v5.7ext 0.85884）。",
  "datasets": {
   "v5": {
    "classes": 8,
@@ -426,8 +426,8 @@
    "patience": 0,
    "reported_weight": "last.pt",
    "epochs_run": 70,
-   "best_epoch": 44,
-   "best_mAP50": 0.84725,
+   "best_epoch": 53,
+   "best_mAP50": 0.84337,
    "best_mAP50_95": 0.63831,
    "plateau16_mean": 0.62944,
    "plateau16_std": 0.00329,
@@ -446,10 +446,10 @@
      "precision": 0.90923,
      "recall": 0.81247,
      "TP": 675,
-     "FP": 116,
-     "FN": 133,
+     "FP": 118,
+     "FN": 135,
      "cross_class": 2,
-     "jaccard": 0.72894
+     "jaccard": 0.72737
     }
    },
    "pooled_2se": {
@@ -565,10 +565,10 @@
      "precision": 0.88134,
      "recall": 0.83221,
      "TP": 678,
-     "FP": 149,
-     "FN": 129,
+     "FP": 152,
+     "FN": 132,
      "cross_class": 3,
-     "jaccard": 0.70699
+     "jaccard": 0.70478
     }
    },
    "pooled_2se": {
