@@ -1,7 +1,8 @@
 // 柑橘病蟲害辨識 — 口頭報告簡報產生器（v12.3，09-15 週會）
 // 數據來源：docs/v12.3_報告_口頭簡報.md（09-14 含 662 補量版）、docs/v12.3_報告_階段性進度週報.md、
 //          docs/v12.3_結果_三平台Benchmark整合.md、docs/v12.3_結果_天璣8300即時辨識門檻.md、
-//          docs/v12.3_結果_Snapdragon8Gen2即時辨識門檻.md、docs/v5.7_結果_兩臂訓練評估.md §3
+//          docs/v12.3_結果_Snapdragon8Gen2即時辨識門檻.md、docs/v5.7_結果_兩臂訓練評估.md §3、
+//          docs/v5.7_報告_交付與研究限制.md §1、docs/v5.7_結果_資料集分析與驗收.md §2.2、docs/v5.6_結果_資料集分析與驗收.md §1–2
 // 樣式沿用 tools/build_deck.js（v12.1）；上週的產生器不動，以便重建上週的簡報。
 const pptxgen = require("pptxgenjs");
 
@@ -505,13 +506,124 @@ function quietChart(extra) {
     x: M, y: 2.6, w: CW, h: 1.0, isTextBox: true, margin: 0,
     fontFace: F, fontSize: 48, bold: true, color: C.white,
   });
-  s.addText("以下幾頁是被問到才翻的資料　·　三台數據總表、GPU 與 NNAPI、判準時間線、常見提問", {
+  s.addText("以下幾頁是被問到才翻的資料　·　交付模型與資料集、三台數據總表、GPU 與 NNAPI、判準時間線、常見提問", {
     x: M, y: 3.68, w: CW, h: 0.5, isTextBox: true, margin: 0,
     fontFace: F, fontSize: 17, color: C.accent,
   });
   s.addNotes("正文到這裡結束。");
 }
 
+// =====================================================================
+// 11a. 備答：交付模型 v5.7 的規格與整體指標
+// =====================================================================
+{
+  const s = pres.addSlide(); lightBg(s);
+  title(s, "交付模型 v5.7：規格與整體指標", "目前交付的權重與它在 valid、test（各 401 張）上的完整數字");
+
+  const lw = 6.3, gap = 0.3, rw = CW - lw - gap;
+  const K = { bold: true, color: C.dark };
+  s.addTable([
+    [hdr("項目"), hdr("內容")],
+    [cell("權重", K), cell("last.pt（5.59 MB）")],
+    [cell("架構", K), cell("官方 yolo26-p2（scale n、end2end、NMS-free），未自訂修改")],
+    [cell("類別", K), cell("9 類：4 種病害、4 種害蟲、薊馬葉害")],
+    [cell("資料集", K), cell("v5.7：train 7,264 / valid 401 / test 401 張")],
+    [cell("訓練", K), cell("固定 70 輪、patience 0、MuSGD、imgsz 640、batch 20")],
+    [cell("耗時", K), cell("Kaggle GPU 約 3.1 小時（每輪約 161 秒，seed 0）")],
+    [cell("環境", K), cell("ultralytics 8.4.121（版本釘死）")],
+  ], { x: M, y: 1.8, w: lw, colW: [1.0, lw - 1.0], rowH: 0.5, ...tblBase, fontSize: 12, align: "left" });
+
+  const B = { bold: true, color: C.mid };
+  const na = { color: C.muted };
+  s.addTable([
+    [hdr("指標"), hdr("valid"), hdr("test")],
+    [cell("mAP50", { bold: true, align: "left" }), cell("0.826", {}), cell("0.861", B)],
+    [cell("mAP50-95", { bold: true, align: "left" }), cell("0.626", {}), cell("0.641", B)],
+    [cell("Precision", { bold: true, align: "left" }), cell("0.852", {}), cell("0.909", B)],
+    [cell("Recall", { bold: true, align: "left" }), cell("0.821", {}), cell("0.812", B)],
+    [cell("Detection Jaccard", { bold: true, align: "left" }), cell("—", na), cell("0.729", B)],
+    [cell("TP / FP / FN", { bold: true, align: "left" }), cell("—", na), cell("675 / 116 / 133", B)],
+    [cell("八類平均 AP50（標註未變動）", { bold: true, align: "left" }), cell("—", na), cell("0.851", B)],
+  ], { x: M + lw + gap, y: 1.8, w: rw, colW: [2.55, 1.2, rw - 3.75], rowH: 0.5, ...tblBase, fontSize: 12, align: "center" });
+
+  card(s, M, 6.0, CW, 0.78, C.rose);
+  s.addText([
+    { text: "口徑：", options: { bold: true, color: C.clay } },
+    { text: "九類 test mAP50 0.861 不可與 v11.5 的 0.810 相比（薊馬葉害換了框定義）；標註沒變的八類平均 0.853 → 0.851，等於沒變。手機上的 TFLite 仍是 v11.5 權重匯出。", options: { color: C.ink } },
+  ], { x: M + 0.3, y: 6.06, w: CW - 0.6, h: 0.66, isTextBox: true, margin: 0, fontFace: F, fontSize: 12.5, valign: "middle" });
+  pageNote(s, "Precision／Recall 取自 ultralytics val()（conf 0.001）；Jaccard 與 TP／FP／FN 取自混淆矩陣（conf 0.25），兩者不在同一工作點　·　來源 docs/v5.7_報告_交付與研究限制.md §1");
+  s.addNotes("被問「模型現在幾分」時翻這頁。先講口徑那一行，再報數字：test mAP50 0.861，但不能跟上週的 0.810 比。");
+}
+
+// =====================================================================
+// 11b. 備答：交付模型 v5.7 的九類逐類 AP50
+// =====================================================================
+{
+  const s = pres.addSlide(); lightBg(s);
+  title(s, "交付模型 v5.7：九類逐類 AP50", "valid＋test 併計（pooled，802 張）；九類 ±2SE 全部 ≤ 0.10　·　依 pooled 由高到低");
+  const weak = new Set(["Citrus_Leaf_Miner（潛葉蛾）", "Thrips（薊馬）", "Scale_Insect（介殼蟲）"]);
+  const rows = [
+    ["Sooty_Mold（煤煙病）", "0.9950", "0.9950", "0.9950", "0.0210", "33 / 32", ""],
+    ["Black_Spot（黑點病）", "0.9603", "0.9454", "0.9528", "0.0304", "25 / 25", ""],
+    ["Oily_Spot（油斑病）", "0.9430", "0.9533", "0.9482", "0.0156", "24 / 24", ""],
+    ["Aphid（蚜蟲）", "0.8974", "0.9615", "0.9297", "0.0341", "75 / 76", ""],
+    ["Canker（潰瘍病）", "0.9282", "0.8809", "0.9045", "0.0431", "24 / 24", "框最多的一類（train 6,489 框）"],
+    ["Thrips_Damage（薊馬葉害）", "0.7243", "0.8453", "0.7848", "0.0825", "40 / 40", "新約定（一葉一框），不可跨版比"],
+    ["Citrus_Leaf_Miner（潛葉蛾）", "0.7931", "0.6875", "0.7403", "0.0990", "45 / 45", "±2SE 最寬"],
+    ["Thrips（薊馬）", "0.6453", "0.7626", "0.7040", "0.0969", "60 / 60", "蟲體來源含圖鑑、微距特寫"],
+    ["Scale_Insect（介殼蟲）", "0.5452", "0.7190", "0.6321", "0.0490", "35 / 35", "最弱；框一致性從未量過"],
+  ];
+  s.addTable([
+    [hdr("類別"), hdr("valid"), hdr("test"), hdr("pooled"), hdr("±2SE"), hdr("評估圖 v / t"), hdr("備註")],
+    ...rows.map((r) => [
+      cell(r[0], { bold: true, color: C.dark, align: "left" }),
+      cell(r[1]), cell(r[2]),
+      cell(r[3], { bold: true, color: weak.has(r[0]) ? C.clay : C.mid }),
+      cell(r[4]), cell(r[5]),
+      cell(r[6], { color: C.muted, align: "left", fontSize: 11 }),
+    ]),
+  ], { x: M, y: 1.75, w: CW, colW: [3.0, 1.0, 1.0, 1.05, 0.95, 1.3, 3.633], rowH: 0.44, ...tblBase, fontSize: 12, align: "center" });
+
+  s.addText("數字取自 last.pt（valid 未參與任何決策，才能與 test 併計）　·　逐類雜訊地板 ±0.04、run 間全距 0.021，小於這個幅度不解讀", {
+    x: M, y: 6.3, w: CW, h: 0.6, isTextBox: true, margin: 0, fontFace: F, fontSize: 12.5, color: C.ink, valign: "top",
+  });
+  s.addNotes("被問「哪一類最差」「某一類幾分」時翻這頁。紅字是 pooled 最低的三類；介殼蟲最弱，而且它的框一致性從未量過，是精度線唯一還沒走過的便宜路。");
+}
+
+// =====================================================================
+// 11c. 備答：資料集 v5.7 的組成
+// =====================================================================
+{
+  const s = pres.addSlide(); lightBg(s);
+  title(s, "資料集 v5.7：組成", "與 v5.6 只差薊馬葉害 208 張重標（一張葉子一個框，245 → 215 框）；其餘八類逐位元相同");
+  const T = { bold: true, color: C.dark };
+  const fmt = (n) => n.toLocaleString("en-US");
+  const data = [
+    ["Oily_Spot（油斑病）", 238, 190, 570, 24, 24, 759, 24, 24],
+    ["Canker（潰瘍病）", 241, 193, 579, 24, 24, 6489, 167, 182],
+    ["Sooty_Mold（煤煙病）", 326, 261, 783, 33, 32, 1036, 33, 32],
+    ["Black_Spot（黑點病）", 250, 200, 600, 25, 25, 801, 25, 25],
+    ["Scale_Insect（介殼蟲）", 251, 181, 543, 35, 35, 3427, 187, 135],
+    ["Citrus_Leaf_Miner（潛葉蛾）", 201, 111, 333, 45, 45, 652, 54, 64],
+    ["Thrips（薊馬）", 554, 434, 493, 60, 60, 1317, 115, 97],
+    ["Aphid（蚜蟲）", 806, 655, 545, 75, 76, 3284, 216, 212],
+    ["Thrips_Damage（薊馬葉害）", 208, 128, 145, 40, 40, 281, 42, 41],
+    ["Background（負樣本）", 400, 320, 0, 40, 40, 0, 0, 0],
+  ];
+  s.addTable([
+    [hdr("類別"), hdr("原始圖數"), hdr("train 原始"), hdr("train 增強"), hdr("valid 圖"), hdr("test 圖"), hdr("train 框"), hdr("valid 框"), hdr("test 框")],
+    ...data.map((r) => [
+      cell(r[0], { bold: true, color: C.dark, align: "left" }),
+      ...r.slice(1).map((v, j) => cell(fmt(v), r[0].startsWith("Thrips_Damage") && j >= 5 ? { bold: true, color: C.accent } : {})),
+    ]),
+    [cell("合計", T), ...[3475, 2673, 4591, 401, 401, 18046, 863, 812].map((v) => cell(fmt(v), T))],
+  ], { x: M, y: 1.72, w: CW, colW: [2.65, 1.15, 1.15, 1.15, 0.95, 0.95, 1.3, 1.25, 1.383], rowH: 0.37, ...tblBase, fontSize: 11.5, align: "center" });
+
+  s.addText("原始圖數為不重複的原始影像；train 圖 = 原始 ＋ 增強（增強只做在 train，各類佔 45–75%）　·　跨 split 近重複 0 組\n九類 pooled ±2SE ≤ 0.10（最差潛葉蛾 0.099）　·　Canker 佔 train 框 36%（類別不平衡沿襲 v5.5）　·　橘字為本版重標後的薊馬葉害框數", {
+    x: M, y: 6.33, w: CW, h: 0.6, isTextBox: true, margin: 0, fontFace: F, fontSize: 12, color: C.ink, valign: "top",
+  });
+  s.addNotes("被問「資料集多大」「每類幾張」時翻這頁。重點：評估集每類只有 24–76 張，所以逐類分數有 ±2SE；潛葉蛾原始影像最少（201 張）。");
+}
 // =====================================================================
 // 12. 備答：三台數據總表
 // =====================================================================
