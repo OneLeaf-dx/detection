@@ -8,7 +8,7 @@
 ## 工作目錄規範
 
 ```
-D:\Claude Code\AY2026 Citrus Pests and Diseases Project\   ← 工作根目錄（＝專案根目錄）
+D:\Claude Code\detection\                    ← 工作根目錄（＝專案根目錄）
 ├── .claude\skills\tflite_mobile_benchmark\  ← 本 Skill 的正本（Claude Code 由此載入）
 ├── tools\                                   ← ⚠ 本專案自己的 19 支 Python 腳本，**不是** ADB 工具
 └── Benchmark\                               ← benchmark 的全部內容都在這底下

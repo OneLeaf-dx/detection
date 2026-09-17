@@ -17,7 +17,7 @@ description: >
 ## 🔧 工具與路徑速查
 
 ```
-工作根目錄  : D:\Claude Code\AY2026 Citrus Pests and Diseases Project\
+工作根目錄  : D:\Claude Code\detection\
 ADB 路徑    : .\Benchmark\platform-tools\adb.exe
 APK 路徑    : .\Benchmark\platform-tools\android_aarch64_benchmark_model.apk
 模型目錄    : .\Benchmark\Model\                        ← 唯一合法的模型來源
