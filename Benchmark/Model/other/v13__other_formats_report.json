@@ -1,0 +1,136 @@
+{
+ "weights": "/work/Train Code/v11.5/Train_output/extracted/runs/detect/v5.7_v11_5/weights/v13.pt",
+ "dataset": "v5.7",
+ "results": {
+  "onnx__i640": {
+   "format": "onnx",
+   "imgsz": 640,
+   "supported_args": [
+    "batch",
+    "data",
+    "dynamic",
+    "quantize",
+    "opset",
+    "simplify",
+    "nms",
+    "fraction"
+   ],
+   "end2end_forced_off": false,
+   "exported": true,
+   "file": "v13__onnx__i640.onnx",
+   "size_mb": 9.98,
+   "val": {
+    "mAP50": 0.85702,
+    "mAP50_95": 0.63688,
+    "precision": 0.88511,
+    "recall": 0.81929,
+    "desktop_ms": {
+     "preprocess": 16.823,
+     "inference": 101.054,
+     "loss": 0.003,
+     "postprocess": 0.387
+    },
+    "per_class_ap50": {
+     "Oily_Spot": 0.94267,
+     "Canker": 0.90261,
+     "Sooty_Mold": 0.995,
+     "Black_Spot": 0.94889,
+     "Scale_Insect": 0.70264,
+     "Citrus_Leaf_Miner": 0.6761,
+     "Thrips": 0.74851,
+     "Aphid": 0.93672,
+     "Thrips_Damage": 0.86002
+    }
+   }
+  },
+  "onnx__i320": {
+   "format": "onnx",
+   "imgsz": 320,
+   "supported_args": [
+    "batch",
+    "data",
+    "dynamic",
+    "quantize",
+    "opset",
+    "simplify",
+    "nms",
+    "fraction"
+   ],
+   "end2end_forced_off": false,
+   "exported": true,
+   "file": "v13__onnx__i320.onnx",
+   "size_mb": 9.49,
+   "val": {
+    "mAP50": 0.78974,
+    "mAP50_95": 0.57274,
+    "precision": 0.86182,
+    "recall": 0.7636,
+    "desktop_ms": {
+     "preprocess": 17.202,
+     "inference": 27.741,
+     "loss": 0.002,
+     "postprocess": 0.342
+    },
+    "per_class_ap50": {
+     "Oily_Spot": 0.915,
+     "Canker": 0.89071,
+     "Sooty_Mold": 0.995,
+     "Black_Spot": 0.97638,
+     "Scale_Insect": 0.5174,
+     "Citrus_Leaf_Miner": 0.58559,
+     "Thrips": 0.67429,
+     "Aphid": 0.88138,
+     "Thrips_Damage": 0.6719
+    }
+   }
+  }
+ },
+ "pytorch_baseline": {
+  "320": {
+   "mAP50": 0.8086,
+   "mAP50_95": 0.58058,
+   "precision": 0.8317,
+   "recall": 0.79455,
+   "desktop_ms": {
+    "preprocess": 0.371,
+    "inference": 49.549,
+    "loss": 0.002,
+    "postprocess": 0.178
+   },
+   "per_class_ap50": {
+    "Oily_Spot": 0.90978,
+    "Canker": 0.901,
+    "Sooty_Mold": 0.995,
+    "Black_Spot": 0.96025,
+    "Scale_Insect": 0.52436,
+    "Citrus_Leaf_Miner": 0.61944,
+    "Thrips": 0.72039,
+    "Aphid": 0.90773,
+    "Thrips_Damage": 0.73943
+   }
+  },
+  "640": {
+   "mAP50": 0.86137,
+   "mAP50_95": 0.64074,
+   "precision": 0.9089,
+   "recall": 0.81403,
+   "desktop_ms": {
+    "preprocess": 1.477,
+    "inference": 164.307,
+    "loss": 0.002,
+    "postprocess": 0.295
+   },
+   "per_class_ap50": {
+    "Oily_Spot": 0.95333,
+    "Canker": 0.89136,
+    "Sooty_Mold": 0.995,
+    "Black_Spot": 0.9454,
+    "Scale_Insect": 0.71524,
+    "Citrus_Leaf_Miner": 0.68215,
+    "Thrips": 0.76304,
+    "Aphid": 0.96151,
+    "Thrips_Damage": 0.84529
+   }
+  }
+ }
+}

@@ -49,6 +49,7 @@ v11.5 實測 `best.pt` 與 `last.pt` 差距 ≤ 0.004 且方向不一致，改�
 | `tools/` | 建置 / 驗收 / 診斷 / 匯出 / 標註流程的腳本 | 一次性的探索腳本 |
 | `Benchmark/` | 延遲量測的**方法**與工具鏈 | 量測**數字**（回到 `docs/` 用 `v12_結果_*` 命名） |
 | `Train Code/<版本>/` | `train_<版本>.ipynb` ＋ `Train_output/` | 跨版本共用的程式（抽到 `tools/`） |
+| `weight/` | 各版本權重的**複製品**（`tools/collect_weights.py` 產生，整個進版控）；`best/<版本>/` 是給 App 端的 | 原始權重（原位置不動）、v12.1 掃描用的其他匯出組合（留在 `Benchmark/Model/`） |
 
 `Train_output/` 的版面固定為：Kaggle 下載的 zip（未進版控）＋ `extracted/`（只有
 `best.pt`／`last.pt`／`args.yaml`／`*.json`／`*.csv` 進版控，其餘由 zip 重現）。

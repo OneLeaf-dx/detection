@@ -78,3 +78,8 @@ Benchmark/Model/other/**
 !Benchmark/Model/other/*.json
 Benchmark/export/out/
 !Benchmark/Model/.gitkeep
+
+# weight/ 整個進版控（2026-09-23 使用者決定），不要在這裡加排除規則。
+# 它是 tools/collect_weights.py 從原位置複製出來的交付整理區：`.pt` 與已追蹤的原檔
+# 內容相同，git 只存一份；真正新增的只有 ONNX／TFLite（每顆 ≤ 11 MB）。
+# 上面 Benchmark/Model 的排除規則照舊——掃描用的 30 顆 TFLite 仍不進版控。

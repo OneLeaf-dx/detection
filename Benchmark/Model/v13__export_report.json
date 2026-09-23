@@ -1,0 +1,183 @@
+{
+ "weights": "/work/Train Code/v11.5/Train_output/extracted/runs/detect/v5.7_v11_5/weights/v13.pt",
+ "dataset": "v5.7",
+ "calibration_split": "train",
+ "fraction": 0.05,
+ "calib_per_class": 60,
+ "calib_balanced": false,
+ "results": {
+  "fp32__i640__e2e1": {
+   "exported": true,
+   "file": "v13__fp32__i640__e2e1.tflite",
+   "variant": "fp32",
+   "imgsz": 640,
+   "end2end": true,
+   "max_det": 300,
+   "end2end_forced_off": false,
+   "size_mb": 9.85,
+   "verify": {
+    "images": 20,
+    "ref_boxes": 44,
+    "tflite_boxes": 44,
+    "matched": 44,
+    "matched_iou_mean": 1.0,
+    "matched_iou_min": 1.0,
+    "worst_image": [
+     "Thrips_00059.jpg",
+     1.0
+    ],
+    "class_match": "44/44",
+    "unmatched_ref": 0,
+    "unmatched_tflite": 0,
+    "unmatched_rate": 0.0,
+    "verdict": "通過"
+   },
+   "val": {
+    "mAP50": 0.85702,
+    "mAP50_95": 0.63688,
+    "precision": 0.88511,
+    "recall": 0.81929,
+    "per_class_ap50": {
+     "Oily_Spot": 0.94267,
+     "Canker": 0.90261,
+     "Sooty_Mold": 0.995,
+     "Black_Spot": 0.94889,
+     "Scale_Insect": 0.70264,
+     "Citrus_Leaf_Miner": 0.6761,
+     "Thrips": 0.74851,
+     "Aphid": 0.93672,
+     "Thrips_Damage": 0.86002
+    },
+    "seconds": 38.1
+   }
+  },
+  "fp32__i320__e2e1": {
+   "exported": true,
+   "file": "v13__fp32__i320__e2e1.tflite",
+   "variant": "fp32",
+   "imgsz": 320,
+   "end2end": true,
+   "max_det": 300,
+   "end2end_forced_off": false,
+   "size_mb": 9.56,
+   "verify": {
+    "images": 20,
+    "ref_boxes": 37,
+    "tflite_boxes": 37,
+    "matched": 37,
+    "matched_iou_mean": 1.0,
+    "matched_iou_min": 1.0,
+    "worst_image": [
+     "Thrips_Damage_00019.jpg",
+     1.0
+    ],
+    "class_match": "37/37",
+    "unmatched_ref": 0,
+    "unmatched_tflite": 0,
+    "unmatched_rate": 0.0,
+    "verdict": "通過"
+   },
+   "val": {
+    "mAP50": 0.78974,
+    "mAP50_95": 0.5727,
+    "precision": 0.86182,
+    "recall": 0.7636,
+    "per_class_ap50": {
+     "Oily_Spot": 0.915,
+     "Canker": 0.89071,
+     "Sooty_Mold": 0.995,
+     "Black_Spot": 0.97638,
+     "Scale_Insect": 0.5174,
+     "Citrus_Leaf_Miner": 0.58559,
+     "Thrips": 0.67429,
+     "Aphid": 0.88138,
+     "Thrips_Damage": 0.6719
+    },
+    "seconds": 18.6
+   }
+  },
+  "w8a32__i640__e2e1": {
+   "exported": true,
+   "file": "v13__w8a32__i640__e2e1.tflite",
+   "variant": "w8a32",
+   "imgsz": 640,
+   "end2end": true,
+   "max_det": 300,
+   "end2end_forced_off": false,
+   "size_mb": 3.1,
+   "verify": {
+    "images": 20,
+    "ref_boxes": 44,
+    "tflite_boxes": 44,
+    "matched": 44,
+    "matched_iou_mean": 0.9877,
+    "matched_iou_min": 0.9652,
+    "worst_image": [
+     "Canker_00019.jpg",
+     0.9652
+    ],
+    "class_match": "44/44",
+    "unmatched_ref": 0,
+    "unmatched_tflite": 0,
+    "unmatched_rate": 0.0,
+    "verdict": "通過"
+   },
+   "val": {
+    "mAP50": 0.85412,
+    "mAP50_95": 0.6352,
+    "precision": 0.86617,
+    "recall": 0.8236,
+    "per_class_ap50": {
+     "Oily_Spot": 0.94267,
+     "Canker": 0.91362,
+     "Sooty_Mold": 0.995,
+     "Black_Spot": 0.94722,
+     "Scale_Insect": 0.68963,
+     "Citrus_Leaf_Miner": 0.66741,
+     "Thrips": 0.7461,
+     "Aphid": 0.93806,
+     "Thrips_Damage": 0.8474
+    },
+    "seconds": 40.8
+   }
+  }
+ },
+ "pytorch_baseline": {
+  "320": {
+   "mAP50": 0.8086,
+   "mAP50_95": 0.58058,
+   "precision": 0.8317,
+   "recall": 0.79455,
+   "per_class_ap50": {
+    "Oily_Spot": 0.90978,
+    "Canker": 0.901,
+    "Sooty_Mold": 0.995,
+    "Black_Spot": 0.96025,
+    "Scale_Insect": 0.52436,
+    "Citrus_Leaf_Miner": 0.61944,
+    "Thrips": 0.72039,
+    "Aphid": 0.90773,
+    "Thrips_Damage": 0.73943
+   },
+   "seconds": 77.4
+  },
+  "640": {
+   "mAP50": 0.86137,
+   "mAP50_95": 0.64074,
+   "precision": 0.9089,
+   "recall": 0.81403,
+   "per_class_ap50": {
+    "Oily_Spot": 0.95333,
+    "Canker": 0.89136,
+    "Sooty_Mold": 0.995,
+    "Black_Spot": 0.9454,
+    "Scale_Insect": 0.71524,
+    "Citrus_Leaf_Miner": 0.68215,
+    "Thrips": 0.76304,
+    "Aphid": 0.96151,
+    "Thrips_Damage": 0.84529
+   },
+   "seconds": 85.3
+  }
+ }
+}

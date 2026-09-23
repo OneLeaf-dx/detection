@@ -1,0 +1,323 @@
+{
+ "generated_by": "tools/collect_weights.py",
+ "note": "weight/ 底下的檔案都是複製品，原位置見各條目的 source。各版本評估的資料集不同，mAP 不可跨資料集比較。",
+ "best": {
+  "v13": [
+   {
+    "path": "best/v13/v13_last.pt",
+    "source": "Train Code/v11.5/Train_output/extracted/runs/detect/v5.7_v11_5/weights/last.pt",
+    "bytes": 5589883,
+    "sha256": "8d6a2fd928d9544e9b24dc5aff73ddd3a7336199ccb3de0be7bf817268e6825d",
+    "format": "pytorch",
+    "picked_from": "v13/YOLO/v13_last.pt"
+   },
+   {
+    "path": "best/v13/v13__fp32__i640__e2e1.onnx",
+    "source": "Benchmark/Model/other/v13__onnx__i640.onnx",
+    "bytes": 10462604,
+    "sha256": "64f48dc346bdc83624b2df16082dbe6961271a0ac307c9bd669a2bbc6b599737",
+    "format": "onnx",
+    "picked_from": "v13/ONNX/v13__fp32__i640__e2e1.onnx",
+    "eval": {
+     "dataset": "v5.7",
+     "mAP50": 0.85702
+    },
+    "imgsz": 640
+   },
+   {
+    "path": "best/v13/v13__fp32__i640__e2e1.tflite",
+    "source": "Benchmark/Model/v13__fp32__i640__e2e1.tflite",
+    "bytes": 10327006,
+    "sha256": "2524602c1212e288f42b47d928facd0f828e9aa59b16e63e2ce232be19a3f297",
+    "format": "tflite",
+    "picked_from": "v13/TFLite/v13__fp32__i640__e2e1.tflite",
+    "eval": {
+     "dataset": "v5.7",
+     "mAP50": 0.85702,
+     "verify": "通過"
+    },
+    "imgsz": 640
+   }
+  ]
+ },
+ "versions": {
+  "v8": {
+   "history_key": "v8",
+   "dataset": "v5",
+   "reported_weight": "best.pt",
+   "files": [
+    {
+     "path": "v8/YOLO/v8_best.pt",
+     "source": "Train Records/YOLO26n_P2_Citrus_MuSGD_v8/weights/best.pt",
+     "bytes": 5615867,
+     "sha256": "58b89b6726b02755a41688d1c4c5b823834b8535279203e06088d44373f00ffe",
+     "format": "pytorch",
+     "reported": true
+    },
+    {
+     "path": "v8/YOLO/v8_last.pt",
+     "source": "Train Records/YOLO26n_P2_Citrus_MuSGD_v8/weights/last.pt",
+     "bytes": 5615867,
+     "sha256": "b78efa2d72373d03fe7cc6d1e1d3a7403dbf7a4b475b2f5c29e033e6159d6d6f",
+     "format": "pytorch",
+     "reported": false
+    }
+   ],
+   "excluded": []
+  },
+  "v9": {
+   "history_key": "v9_A0",
+   "dataset": "v5r",
+   "reported_weight": "best.pt",
+   "files": [
+    {
+     "path": "v9/YOLO/v9_best.pt",
+     "source": "Train Code/v9/Train_output/Phase4/best.pt",
+     "bytes": 5627067,
+     "sha256": "00c99e3de7e6eb135344ca7424f5a4b6b6d4a502fe5226f9df04a7356d7d951f",
+     "format": "pytorch",
+     "reported": true
+    }
+   ],
+   "excluded": []
+  },
+  "v10": {
+   "history_key": "v10",
+   "dataset": "v5.5",
+   "reported_weight": "best.pt",
+   "files": [
+    {
+     "path": "v10/YOLO/v10_best.pt",
+     "source": "Train Code/v10/Train_output/extracted/best.pt",
+     "bytes": 5613755,
+     "sha256": "ffdded4d25382efee6b49e8059afeffaff6a8b8994e6237fce141a26db16fe60",
+     "format": "pytorch",
+     "reported": true
+    }
+   ],
+   "excluded": []
+  },
+  "v11": {
+   "history_key": "v11",
+   "dataset": "v5.6",
+   "reported_weight": "best.pt",
+   "files": [
+    {
+     "path": "v11/YOLO/v11_best.pt",
+     "source": "Train Code/v11/Train_output/extracted/runs/detect/v5.6_v11/weights/best.pt",
+     "bytes": 5594875,
+     "sha256": "4f5333e1a57dd14329e611e1cc8aaa3fdb619185f1db2b3e55c1caef77181075",
+     "format": "pytorch",
+     "reported": true
+    },
+    {
+     "path": "v11/YOLO/v11_last.pt",
+     "source": "Train Code/v11/Train_output/extracted/runs/detect/v5.6_v11/weights/last.pt",
+     "bytes": 5594875,
+     "sha256": "f3c10bdcdcd6744a9b1bc1ef4cf17568784a231d9b618305b84e7ed1bd8f6112",
+     "format": "pytorch",
+     "reported": false
+    }
+   ],
+   "excluded": []
+  },
+  "v11.5": {
+   "history_key": "v11.5",
+   "dataset": "v5.6",
+   "reported_weight": "last.pt",
+   "files": [
+    {
+     "path": "v11.5/YOLO/v11.5_best.pt",
+     "source": "Train Code/v11.5/Train_output/extracted/runs/detect/v5.6_v11_5/weights/best.pt",
+     "bytes": 5589883,
+     "sha256": "880a58c4dbe6dbc80fa728e331050961839f40e593e0faa120381706a26cbd21",
+     "format": "pytorch",
+     "reported": false
+    },
+    {
+     "path": "v11.5/YOLO/v11.5_last.pt",
+     "source": "Train Code/v11.5/Train_output/extracted/runs/detect/v5.6_v11_5/weights/last.pt",
+     "bytes": 5589883,
+     "sha256": "66aa40cbb03aa5d48df4007d1f70e95bc437e942ad35b62a141cb02ed154c827",
+     "format": "pytorch",
+     "reported": true
+    },
+    {
+     "path": "v11.5/TFLite/v11.5__fp32__i640__e2e1.tflite",
+     "source": "Benchmark/Model/last__fp32__i640__e2e1.tflite",
+     "bytes": 10327006,
+     "sha256": "9635ac7b3dd302b41bd658b9e47b7767b70cf367510e628e99cbd48a4cac6c7e",
+     "format": "tflite",
+     "imgsz": 640,
+     "eval": {
+      "dataset": "v5.6",
+      "mAP50": 0.81554,
+      "verify": "通過"
+     }
+    },
+    {
+     "path": "v11.5/TFLite/v11.5__fp32__i320__e2e1.tflite",
+     "source": "Benchmark/Model/last__fp32__i320__e2e1.tflite",
+     "bytes": 10021005,
+     "sha256": "09cb10c79a2a94f214e9ba8c3a5328d340784ded11cec423fcb855b8b7a3967b",
+     "format": "tflite",
+     "imgsz": 320,
+     "eval": {
+      "dataset": "v5.6",
+      "mAP50": 0.78012,
+      "verify": "通過"
+     }
+    },
+    {
+     "path": "v11.5/TFLite/v11.5__w8a32__i640__e2e1.tflite",
+     "source": "Benchmark/Model/last__w8a32__i640__e2e1.tflite",
+     "bytes": 3249882,
+     "sha256": "0c323ebda9f194847d4e754b26fcf49e6dc8d09e8a9fd3f094b23754fb3fac7b",
+     "format": "tflite",
+     "imgsz": 640,
+     "eval": {
+      "dataset": "v5.6",
+      "mAP50": 0.81936,
+      "verify": "通過"
+     }
+    },
+    {
+     "path": "v11.5/ONNX/v11.5__fp32__i640__e2e1.onnx",
+     "source": "Benchmark/Model/other/last__onnx__i640.onnx",
+     "bytes": 10462604,
+     "sha256": "1cda5e5bb32207bedf7b610a8a9f301deb3b10b0f6ddbf329907484c6a4e123e",
+     "format": "onnx",
+     "imgsz": 640,
+     "eval": {
+      "dataset": "v5.6",
+      "mAP50": 0.81554
+     }
+    },
+    {
+     "path": "v11.5/ONNX/v11.5__fp32__i320__e2e1.onnx",
+     "source": "Benchmark/Model/other/last__onnx__i320.onnx",
+     "bytes": 9952217,
+     "sha256": "060241642c6a4a49d6509c4c9506e5df140daf91dc8b6833071953fad5644db4",
+     "format": "onnx",
+     "imgsz": 320,
+     "eval": {
+      "dataset": "v5.6",
+      "mAP50": 0.78012
+     }
+    }
+   ],
+   "excluded": []
+  },
+  "v12s": {
+   "history_key": "v12s",
+   "dataset": "v5.6",
+   "reported_weight": "last.pt",
+   "files": [
+    {
+     "path": "v12s/YOLO/v12s_best.pt",
+     "source": "Train Code/v12s/Train_output/extracted/runs/detect/v5.6_v12s/weights/best.pt",
+     "bytes": 19945851,
+     "sha256": "816aa258328a2f6022d7f3847e2f8b74232cfa72ba9c032966c57c43df44374b",
+     "format": "pytorch",
+     "reported": false
+    },
+    {
+     "path": "v12s/YOLO/v12s_last.pt",
+     "source": "Train Code/v12s/Train_output/extracted/runs/detect/v5.6_v12s/weights/last.pt",
+     "bytes": 19945851,
+     "sha256": "89f351e7493807cfbcf511274ac971547d6bcc2d269796695dcaa7f2950bef94",
+     "format": "pytorch",
+     "reported": true
+    }
+   ],
+   "excluded": []
+  },
+  "v13": {
+   "history_key": "v5.7_v11_5",
+   "dataset": "v5.7",
+   "reported_weight": "last.pt",
+   "files": [
+    {
+     "path": "v13/YOLO/v13_best.pt",
+     "source": "Train Code/v11.5/Train_output/extracted/runs/detect/v5.7_v11_5/weights/best.pt",
+     "bytes": 5589883,
+     "sha256": "6c710f9ea0e8566fe07cc91ecd91e1480e577dd1efc37822881c5445c253a7fc",
+     "format": "pytorch",
+     "reported": false
+    },
+    {
+     "path": "v13/YOLO/v13_last.pt",
+     "source": "Train Code/v11.5/Train_output/extracted/runs/detect/v5.7_v11_5/weights/last.pt",
+     "bytes": 5589883,
+     "sha256": "8d6a2fd928d9544e9b24dc5aff73ddd3a7336199ccb3de0be7bf817268e6825d",
+     "format": "pytorch",
+     "reported": true
+    },
+    {
+     "path": "v13/TFLite/v13__fp32__i640__e2e1.tflite",
+     "source": "Benchmark/Model/v13__fp32__i640__e2e1.tflite",
+     "bytes": 10327006,
+     "sha256": "2524602c1212e288f42b47d928facd0f828e9aa59b16e63e2ce232be19a3f297",
+     "format": "tflite",
+     "imgsz": 640,
+     "eval": {
+      "dataset": "v5.7",
+      "mAP50": 0.85702,
+      "verify": "通過"
+     }
+    },
+    {
+     "path": "v13/TFLite/v13__fp32__i320__e2e1.tflite",
+     "source": "Benchmark/Model/v13__fp32__i320__e2e1.tflite",
+     "bytes": 10021007,
+     "sha256": "0078731d3e9109afcaf99e7787184d610db6dfde07751404ef08afa3f91b8348",
+     "format": "tflite",
+     "imgsz": 320,
+     "eval": {
+      "dataset": "v5.7",
+      "mAP50": 0.78974,
+      "verify": "通過"
+     }
+    },
+    {
+     "path": "v13/TFLite/v13__w8a32__i640__e2e1.tflite",
+     "source": "Benchmark/Model/v13__w8a32__i640__e2e1.tflite",
+     "bytes": 3249882,
+     "sha256": "8bd6af93972011ace0fec79e73030a0f3a8f47631386ec39d099350b2bdcee84",
+     "format": "tflite",
+     "imgsz": 640,
+     "eval": {
+      "dataset": "v5.7",
+      "mAP50": 0.85412,
+      "verify": "通過"
+     }
+    },
+    {
+     "path": "v13/ONNX/v13__fp32__i640__e2e1.onnx",
+     "source": "Benchmark/Model/other/v13__onnx__i640.onnx",
+     "bytes": 10462604,
+     "sha256": "64f48dc346bdc83624b2df16082dbe6961271a0ac307c9bd669a2bbc6b599737",
+     "format": "onnx",
+     "imgsz": 640,
+     "eval": {
+      "dataset": "v5.7",
+      "mAP50": 0.85702
+     }
+    },
+    {
+     "path": "v13/ONNX/v13__fp32__i320__e2e1.onnx",
+     "source": "Benchmark/Model/other/v13__onnx__i320.onnx",
+     "bytes": 9952217,
+     "sha256": "a9caffab2245ed00950b5a2fc3034851190b668df95e463882bfc8282691456f",
+     "format": "onnx",
+     "imgsz": 320,
+     "eval": {
+      "dataset": "v5.7",
+      "mAP50": 0.78974
+     }
+    }
+   ],
+   "excluded": []
+  }
+ }
+}

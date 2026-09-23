@@ -365,10 +365,16 @@ def _predict(model, images, conf: float, imgsz: int):
 
     PyTorch 端其實可以一次吃多張，但這裡刻意也走同一條路——兩邊的前處理
     完全一致，比對出來的差異才只來自序列化本身。
+
+    **`rect=False` 不能省。** `YOLO.predict()` 預設帶 `rect=True`（`engine/model.py:507`），
+    `.pt` 會拿到依原圖比例、補邊最少的矩形輸入；靜態匯出的 `.tflite` 只吃正方形。
+    兩邊輸入不同，比出來的就不只是序列化的差異。v13 第一次驗收就栽在這裡：
+    `Black_Spot_00004.jpg` 上 PyTorch 報 Black_Spot 0.83、tflite 報 Oily_Spot 0.66，
+    改餵同一個 640×640 張量後兩邊輸出逐位相同（ONNX Runtime 也是）。
     """
     out = []
     for p in images:
-        r = model.predict(p, conf=conf, imgsz=imgsz, verbose=False, device="cpu")[0]
+        r = model.predict(p, conf=conf, imgsz=imgsz, rect=False, verbose=False, device="cpu")[0]
         b = r.boxes
         rows = [] if b is None or len(b) == 0 else [
             (*map(float, xy), float(c), int(k))
